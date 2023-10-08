@@ -13,7 +13,7 @@ public class prueba{
 	//**Prueba de crear una cuenta cheemsmart y acceder a los datos*
 		Persona p = new Persona("Persona1", "direccion", 55742587);
 		CuentaBancaria banco = new CuentaBancaria(p, 123456, 12.0);
-		CuentaCheemsMart c = new CuentaCheemsMart(p, banco, "user00", "contra123", "mexico");
+		CuentaCheemsMart c = new CuentaCheemsMart(banco, "user00", "contra123", "mexico");
 		
 		System.out.println(c.nombre());
 		System.out.println(c.direccion());
