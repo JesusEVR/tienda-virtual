@@ -21,4 +21,12 @@ public class CuentaBancaria extends Cuenta{
 		return saldo;
 	}
 
+	public void retirar(double monto){
+		if(monto>saldo) throw new IllegalArgumentException(); //excede lo que tiene en su cuenta
+		saldo -= monto;
+	}
+	
+	public void depositar(double monto){
+		saldo += monto;
+	}
 }
