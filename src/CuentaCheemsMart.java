@@ -5,8 +5,8 @@ public class CuentaCheemsMart extends Cuenta{
 	private String contrasenia;
 	private String paisOrigen;
 	
-	public CuentaCheemsMart(Persona persona, CuentaBancaria cuenta, String usuario, String contrasenia, String paisOrigen){
-		super(persona);
+	public CuentaCheemsMart(CuentaBancaria cuenta, String usuario, String contrasenia, String paisOrigen){
+		super(cuenta.cliente());
 		this.cuenta = cuenta;
 		this.usuario = usuario;
 		this.contrasenia = contrasenia;
