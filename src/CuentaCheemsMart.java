@@ -33,4 +33,8 @@ public class CuentaCheemsMart extends Cuenta{
 		return cuenta.saldo();
 	}
 
+	public void hacerCompra(double valorCompra){
+		cuenta.retirar(valorCompra);
+	}
+
 }
