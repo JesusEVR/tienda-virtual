@@ -8,6 +8,10 @@ public class CuentaBancaria extends Cuenta{
 		this.numeroCuenta = numeroCuenta;
 		this.saldo = saldo;
 	}
+
+	public Persona cliente(){
+		return persona;
+	}
 	
 	public int numeroCuenta(){
 		return numeroCuenta;
