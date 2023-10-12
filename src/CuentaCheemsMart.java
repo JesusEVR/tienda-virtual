@@ -1,6 +1,5 @@
 public class CuentaCheemsMart implements Cuenta{
 	
-	private Persona persona;
 	private CuentaBancaria cuenta;
 	private String usuario;
 	private String contrasenia;
@@ -8,7 +7,6 @@ public class CuentaCheemsMart implements Cuenta{
 	private boolean cuentaValida;
 	
 	public CuentaCheemsMart(CuentaBancaria cuenta, String usuario, String contrasenia, String paisOrigen){
-		persona = cuenta.cliente();
 		this.cuenta = cuenta;
 		this.usuario = usuario;
 		this.contrasenia = contrasenia;
@@ -17,17 +15,16 @@ public class CuentaCheemsMart implements Cuenta{
 	}
 	
 	public String nombre(){
-		return persona.nombre();
+		return cuenta.cliente().nombre();
 	}
 	
 	public String direccion(){
-		return persona.direccion();
+		return cuenta.cliente().direccion();
 	}
 	
 	public int telefono(){
-		return persona.telefono();
+		return cuenta.cliente().telefono();
 	}
-	
 	
 	public String usuario(){
 		return usuario;
