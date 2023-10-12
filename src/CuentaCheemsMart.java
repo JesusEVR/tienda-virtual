@@ -1,17 +1,33 @@
-public class CuentaCheemsMart extends Cuenta{
+public class CuentaCheemsMart implements Cuenta{
 	
+	private Persona persona;
 	private CuentaBancaria cuenta;
 	private String usuario;
 	private String contrasenia;
 	private String paisOrigen;
+	private boolean cuentaValida;
 	
 	public CuentaCheemsMart(CuentaBancaria cuenta, String usuario, String contrasenia, String paisOrigen){
-		super(cuenta.cliente());
+		persona = cuenta.cliente();
 		this.cuenta = cuenta;
 		this.usuario = usuario;
 		this.contrasenia = contrasenia;
 		this.paisOrigen = paisOrigen;
+		cuentaValida  =false;
 	}
+	
+	public String nombre(){
+		return persona.nombre();
+	}
+	
+	public String direccion(){
+		return persona.direccion();
+	}
+	
+	public int telefono(){
+		return persona.telefono();
+	}
+	
 	
 	public String usuario(){
 		return usuario;
@@ -25,16 +41,18 @@ public class CuentaCheemsMart extends Cuenta{
 		return paisOrigen;
 	}
 	
-	public int numeroCuenta(){
-		return cuenta.numeroCuenta();
+	public void verificarCompra(int numero){ //numero cuenta
+		if(cuenta.numeroCuenta() == numero){
+			cuentaValida = true;
+		}else{
+			throw new IllegalArgumentException();
+		}
 	}
 	
-	public double saldo(){
-		return cuenta.saldo();
-	}
-
-	public void hacerCompra(double valorCompra){
-		cuenta.retirar(valorCompra);
+	public void comprar(double valorCompra) throws SaldoInsuficienteException{ //valor de lo que compró 
+		if(cuentaValida){
+			cuenta.comprar(valorCompra);
+		}
 	}
 
 }

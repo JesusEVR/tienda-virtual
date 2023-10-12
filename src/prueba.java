@@ -20,15 +20,19 @@ public class prueba{
 		CuentaBancaria banco = new CuentaBancaria(p, 123456, 12.0);
 		CuentaCheemsMart c = new CuentaCheemsMart(banco, "user00", "contra123", "mexico");
 		
-		//c.hacerCompra(10.0);
-		System.out.println(c.nombre());
-		System.out.println(c.direccion());
-		System.out.println(c.telefono());
-		System.out.println(c.pais());
-		System.out.println(c.usuario());
-		System.out.println(c.contrasenia());
-		System.out.println(c.numeroCuenta());
-		System.out.println(c.saldo());
+		//Prueba de comprar 
+		System.out.println("Ingresando numero de cuenta: 123456");
+		try{
+			c.verificarCompra(123456);
+			c.comprar(100);
+		}catch(IllegalArgumentException e){
+			System.out.println("Numero de cuenta invalido");
+		}catch(SaldoInsuficienteException i){
+			System.out.println("Saldo insuficiente");
+		}
+		
+		
+		
 		
 		
 		CheemsMart tienda = new CheemsMart();
