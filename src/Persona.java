@@ -43,7 +43,7 @@ public class Persona{
 	}
 
 	/**
-	 * Metodo que devuelve la direccion d un individuo
+	 * Metodo que devuelve la direccion de un individuo
 	 *
          * @return direccion Su direccion de la persona
 	 */
