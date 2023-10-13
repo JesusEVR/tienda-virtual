@@ -9,7 +9,7 @@
 public interface Cuenta{
 
 	/**
-	 * Metodo que procede en la compra de productos en la tienda virtual CheemsMart.
+	 * Metodo que procede la compra de productos en la tienda virtual CheemsMart.
 	 *
          * @throws SaldoInsuficienteException si el saldo en la cuenta bancaria es insuficiente.
 	 */
