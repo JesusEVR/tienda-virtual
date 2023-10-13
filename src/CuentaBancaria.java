@@ -63,10 +63,11 @@ public class CuentaBancaria implements Cuenta{
 	/**
 	 * Metodo que procede en la compra de productos en la tienda virtual CheemsMart.
 	 *
+         * @param monto El dinero que debe pagar por la compra, y que se sera restado de su saldo.
          * @throws SaldoInsuficienteException si el saldo en la cuenta bancaria es insuficiente.
 	 */
 	public void comprar(double monto) throws SaldoInsuficienteException{
-		if(monto>saldo) throw new SaldoInsuficienteException(); //excede lo que tiene en su cuenta
+		if(monto>saldo) throw new SaldoInsuficienteException();
 		saldo -= monto;
 	}
 
