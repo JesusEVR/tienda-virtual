@@ -52,7 +52,7 @@ public class Persona{
 	}
 
 	/**
-	 * Metodo ue devuelve el telefono de un individuo
+	 * Metodo que devuelve el telefono de un individuo
 	 *
 	 * @return telefono El numero telefonico de la persona
 	 */
