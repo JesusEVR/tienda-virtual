@@ -9,11 +9,11 @@
  *
  */
 public class Television implements Articulo{
-  
-  /**
-   * Constructor por omision del articulo Television
-   *
-   */
+	
+	/**
+         * Constructor por omision del articulo Television
+         *
+         */
 	public Television(){
 	}
 
