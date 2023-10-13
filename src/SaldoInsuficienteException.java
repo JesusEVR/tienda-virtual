@@ -1,15 +1,16 @@
 /**
-* Clase que lanza una excepción cuando el saldo es insuficiente
+* Clase que lanza una excepcion cuando el saldo de la cuenta es insuficiente.
 *
 * @author paolasanv
 * @author Supr-Lilito
 * @author JesusEVR
-* @version septiembre 2023
+* @version octubre 2023
 */
- 
 public class SaldoInsuficienteException extends Exception{
+	
 	/**
 	* Constructor que recibe como parámetro una cadena
+        *
 	* @param mensaje
 	*/
 	public SaldoInsuficienteException(String mensaje){
