@@ -14,10 +14,12 @@ public interface Articulo{
 	 * Devuelve el precio del artículo
 	 */
 	public double precio();
+	
 	/**
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion();
+	
 	/**
 	 * Devuelve el codigo de barras del artículo
 	 */
