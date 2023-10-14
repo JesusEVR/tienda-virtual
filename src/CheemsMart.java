@@ -7,6 +7,7 @@ public class CheemsMart{
 	private Scanner sc = new Scanner(System.in);
 	private CuentaCheemsMart usuarioActual;
 	private boolean existeUsuario=false;
+	private TiendaVirtual tienda;
 	
 	public CheemsMart(){
 	}
@@ -30,6 +31,7 @@ public class CheemsMart{
 			for(CuentaCheemsMart cuenta: listaUsuarios){
 				if(usuario.equals(cuenta.usuario()) && contrasenia.equals(cuenta.contrasenia())){
 					usuarioActual = cuenta;
+					tienda = new TiendaVirtual(usuarioActual);
 					existeUsuario=true;
 				}
 			}
@@ -38,11 +40,25 @@ public class CheemsMart{
 	}
 	
 	public void asignarIdioma(){
-		System.out.println("asignando idioma...");
+		if(usuarioActual.pais().toLowerCase().equals("mexico")){
+			tienda.asignarIdioma(tienda.espaniolLatino());
+		
+		}/*else if(usuarioActual.pais().toLowerCase().equals("españa")){
+			tienda.asignarIdioma(tienda.espaniol());
+		
+		}else if(usuarioActual.pais().toLowerCase().equals("eeuu")){
+			tienda.asignarIdioma(tienda.ingles());
+		}*/
+	
 	}
 	
 	public void entrarAlaTienda(){
-		System.out.println("entrando a la tienda....");
+		tienda.saludar();
+		tienda.ofertas();
+		tienda.entrarTienda();
+		tienda.ticket();
+		tienda.despedir();	
+		existeUsuario=false;
 	}
 
 }

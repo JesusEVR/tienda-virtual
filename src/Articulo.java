@@ -23,5 +23,5 @@ public interface Articulo{
 	/**
 	 * Devuelve el codigo de barras del artículo
 	 */
-	public int codigoBarras();
+	public String codigoBarras();
 }

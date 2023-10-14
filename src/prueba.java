@@ -32,7 +32,12 @@ public class prueba{
 		}
 		
 		
-		
+		//prueba mexico
+		/*TiendaVirtual t = new TiendaVirtual(c);
+		Mexico me = new Mexico(t);
+		me.ofertas();
+		me.entrarTienda();
+		me.ticket();*/
 		
 		
 		CheemsMart tienda = new CheemsMart();
@@ -83,14 +88,11 @@ public class prueba{
 							}
 						}
 						
-						
-						
 						if(tienda.existeUsuario()){
 							tienda.asignarIdioma();
 							tienda.entrarAlaTienda();
 							seguir = true;
 						}
-						
 						
 						break;
 					case 0:

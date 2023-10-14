@@ -23,7 +23,7 @@ public class DescuentoDiez extends Descuento{
 	public String informacion(){
 		return centro.informacion() + " Precio con 10% de descuento: " +precio();
 	}
-	public int codigoBarras(){
+	public String codigoBarras(){
 		return centro.codigoBarras();
 	}
 	

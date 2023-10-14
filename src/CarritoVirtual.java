@@ -32,12 +32,19 @@ public class CarritoVirtual implements Articulo{
 		return articulos;
 	}
 	
-	public int codigoBarras(){ 
-		return 0;
+	public String codigoBarras(){ 
+		return "0";
 	}
 	
 	public void agregarArticulo(Articulo a){
 		listaDeCompras.add(a);
 	}
 	
+	public void vaciarCarrito(){
+		listaDeCompras.clear();
+	}
+	
+	public boolean tieneArticulo(){
+		return listaDeCompras.size()!=0;
+	}
 }

@@ -34,7 +34,7 @@ public class Pan implements Articulo{
 	/**
 	 * Devuelve el codigo de barras del artículo
 	 */
-	public int codigoBarras(){
-		return 1000;
+	public String codigoBarras(){
+		return "AL100";
 	}
 }

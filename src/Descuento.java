@@ -24,7 +24,7 @@ public abstract class Descuento implements Articulo{
 	public String informacion(){
 		return centro.informacion();
 	}
-	public int codigoBarras(){
+	public String codigoBarras(){
 		return centro.codigoBarras();
 	}
 	
