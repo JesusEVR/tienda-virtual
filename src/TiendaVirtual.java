@@ -72,8 +72,22 @@ public class TiendaVirtual{
 	
 	public Articulo buscarAlimento(String codigoBarras){
 		System.out.println("buscando el articulo en el catalogo de alimentos..");
+		
+		/*
+		Catalogo catalogoAlimento = new CatalogoAlimento();
+		Iterador iteradorAlimentos =  catalogoAlimentos.creaIterador();
+		Articulo articulo;
+		
+		while(iteradorAlimentos.hasNext()){
+			articulo = iteradorAlimentos.next();
+				if(codigoBarras.equals(articulo.codigoBarras())) return articulo;
+		}*/	
+		
+		
 		return null;
 	}
+	
+	
 	
 	public Articulo buscarElectrodomestico(String codigoBarras){
 		System.out.println("buscando el articulo en el catalogo de electrodomesticos...");
@@ -110,7 +124,15 @@ public class TiendaVirtual{
 		return puedeGenerarTicket;
 	}
 	
-	public CuentaCheemsMart usuarioActual(){
-		return usuarioActual;
+	public void listaCompras(){
+		System.out.println(carrito.informacion());
+		System.out.println("	Total: $"+ carrito.precio()+ " MXM");
 	}
+	
+	
+	public void compraSegura(String numeroCuenta) throws SaldoInsuficienteException{
+		usuarioActual.verificarCompra(numeroCuenta);
+		usuarioActual.comprar(carrito.precio());
+	}
+	
 }

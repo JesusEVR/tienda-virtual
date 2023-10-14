@@ -14,7 +14,7 @@ public class CuentaBancaria implements Cuenta{
 	/**
 	 * Numero de cuenta unico de la cuenta bancaria
 	 */
-	private int numeroCuenta;
+	private String numeroCuenta;
 	/**
 	 * Saldo disponible en la cuenta bancaria
 	 */
@@ -27,7 +27,7 @@ public class CuentaBancaria implements Cuenta{
          * @param numeroCuenta El numero de cuenta de la cuenta bancaria
 	 * @param saldo El saldo disponible en la cuenta bancaria
 	 */
-	public CuentaBancaria(Persona persona, int numeroCuenta, double saldo){
+	public CuentaBancaria(Persona persona, String numeroCuenta, double saldo){
 		this.persona = persona;
 		this.numeroCuenta = numeroCuenta;
 		this.saldo = saldo;
@@ -47,7 +47,7 @@ public class CuentaBancaria implements Cuenta{
 	 *
          * @return numeroCuenta El numero de cuenta, de dicha cuenta
 	 */
-	public int numeroCuenta(){
+	public String numeroCuenta(){
 		return numeroCuenta;
 	}
 

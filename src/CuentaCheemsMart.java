@@ -104,8 +104,8 @@ public class CuentaCheemsMart implements Cuenta{
          * @param numero El numero de cuenta ingresado por el cliente
 	 * @throws IllegalArgumentException si el numero de cuenta bancaria ingresado por el cliente no corresponde al que esta registrado en el sistema.
 	 */
-	public void verificarCompra(int numero){ //numero de cuenta
-		if(cuenta.numeroCuenta() == numero){
+	public void verificarCompra(String numero){ //numero de cuenta
+		if(cuenta.numeroCuenta().equals(numero)){
 			cuentaValida = true;
 		}else{
 			throw new IllegalArgumentException();

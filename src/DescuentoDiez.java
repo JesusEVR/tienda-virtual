@@ -21,7 +21,7 @@ public class DescuentoDiez extends Descuento{
 		return nuevoPrecio;
 	}
 	public String informacion(){
-		return centro.informacion() + " Precio con 10% de descuento: " +precio();
+		return centro.informacion() + " -- Precio con 10% de descuento: $" +precio() + " MXN";
 	}
 	public String codigoBarras(){
 		return centro.codigoBarras();

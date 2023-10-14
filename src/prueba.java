@@ -17,13 +17,13 @@ public class prueba{
 
 		//Prueba de crear una cuenta cheemsmart y acceder a los datos*
 		Persona p = new Persona("Persona1", "direccion", 55742587);
-		CuentaBancaria banco = new CuentaBancaria(p, 123456, 12.0);
+		CuentaBancaria banco = new CuentaBancaria(p, "123456", 12.0);
 		CuentaCheemsMart c = new CuentaCheemsMart(banco, "user00", "contra123", "mexico");
 		
 		//Prueba de comprar 
 		System.out.println("Ingresando numero de cuenta: 123456");
 		try{
-			c.verificarCompra(123456);
+			c.verificarCompra("1237456");
 			c.comprar(100);
 		}catch(IllegalArgumentException e){
 			System.out.println("Numero de cuenta invalido");

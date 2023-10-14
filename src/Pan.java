@@ -28,7 +28,7 @@ public class Pan implements Articulo{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Código: " +codigoBarras()+ " Artículo: Pan de caja integral"+"\n"+ "	Precio: " +precio();
+		return "Código: " +codigoBarras()+ " Artículo: Pan de caja integral"+"\n"+ "	Precio: $" +precio() + " MXN";
 	}
 
 	/**

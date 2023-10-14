@@ -6,7 +6,7 @@ public class Mexico implements ModoIdioma{
 	TiendaVirtual tienda;
 	private Scanner sc = new Scanner(System.in);
 	private Random random = new Random();
-	private int oferta;
+	int oferta;
 	
 	public Mexico(TiendaVirtual t){
 		tienda = t;
@@ -70,7 +70,7 @@ public class Mexico implements ModoIdioma{
 		int opcion=0;
 		String codigoBarras="";
 		boolean seguir=false;
-		
+		Articulo articulo;
 		
 		do{
 		System.out.println("");
@@ -93,24 +93,35 @@ public class Mexico implements ModoIdioma{
 
 			switch(opcion){
 				case 0:
-					if(!tienda.carritoVacio()){
-						tienda.cancelarCompra();
-					}
-
+					if(!tienda.carritoVacio()) tienda.cancelarCompra();
 					seguir = false;
 					break;
 				case 1:
 					System.out.print("Escribe el codigo de barras del artículo: ");
+					
 						codigoBarras = sc.nextLine();
-						if(codigoBarras.length()==5){
-							if(codigoBarras.toUpperCase().contains("AL")){
-								System.out.println("buscar en catalogo alimentos");
+					
+						if(codigoBarras.length()==5){ //el codigo tiene 5 caracteres
+							
+							if(codigoBarras.toUpperCase().contains("AL")){ //pertenece al depto de alimentos
+								System.out.println("Codigo correcto");
+								//articulo = tienda.buscarAlimento(codigoBarras);
+								//if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								//this.alimentoConDescuento(articulo);
+				
 								
-							}else if(codigoBarras.toUpperCase().contains("ET")){
-								System.out.println("buscar en catalogo electronica");
+							}else if(codigoBarras.toUpperCase().contains("ET")){ //pertenece al depto de electronica
+								System.out.println("Codigo correcto");
+								//articulo = tienda.buscarElectronico(codigoBarras);
+								//if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								//tienda.agregarAlCarrito(articulo);
 								
-							}else if(codigoBarras.toUpperCase().contains("ED")){
-								System.out.println("buscar en catalogo electrodomesticos");
+							}else if(codigoBarras.toUpperCase().contains("ED")){ //pertenece al depto de electrodomesticos
+								System.out.println("Codigo correcto");
+								//articulo = tienda.buscarElectrodomestico(codigoBarras);
+								//if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								//tienda.agregarAlCarrito(articulo);
+								
 								
 							}else{ System.out.println("\n		Codigo de barras inválido \n");}
 							
@@ -119,29 +130,35 @@ public class Mexico implements ModoIdioma{
 					seguir = true;
 					break;
 				case 2:
-					//System.out.println("carrito vacio " + tienda.carritoVacio());
-					if(!tienda.carritoVacio()){
-						tienda.generarTicket(true);
-					}
+					if(!tienda.carritoVacio()) tienda.generarTicket(true);
 					seguir = false;
 					break;
 			}
 		}while(seguir);
 	}
 	
-	public void comprarAlimento(String codigoBarras){ //busca el articulo en el catalogo correspondiente y le aplica su respectivo descuento 
-	
-		/*switch(oferta){
+	// aplica su respectivo descuento 
+	private void alimentoConDescuento(Articulo a){ 
+		
+		Articulo articulo;
+		
+		switch(oferta){
 			case 0: //Los alimentos no tienen descuento
+				tienda.agregarAlCarrito(a);
 				break;
 			case 1:  //Los alimentos tienen 10% descuento
+				articulo = new DescuentoDiez(a); 
+				tienda.agregarAlCarrito(articulo);
 				break;
 			case 2:  //Los alimentos tienen 20% descuento
+				articulo = new DescuentoVeinte(a); 
+				tienda.agregarAlCarrito(articulo);
 				break;
 			case 3:  //Los alimentos tienen 30% descuento
+				articulo = new DescuentoTreinta(a); 
+				tienda.agregarAlCarrito(articulo);
 				break;
-		}*/
-		
+		}
 		
 	}
 	
@@ -160,9 +177,25 @@ public class Mexico implements ModoIdioma{
 		}
 	}
 	
-	public void ticket(){ //aqui sucede la compra segura y se genera el ticket
+	public void ticket(){ //aqui sucede la compra segura y se genera el ticket **falta probar
 		if(tienda.puedeGenerarTicket()){
-			System.out.println("generando ticket...");
+			System.out.println("");
+			System.out.println("---------- C O M P R A       S E G U R A----------- ");
+			System.out.println("");
+			System.out.println("Su lista de compras se muestra a continuación: ");
+			System.out.println("");
+			//tienda.listaCompras();
+			System.out.println("Ingrese su número de cuenta para completar la transacción: ");
+			String cuentaUsuario = sc.nextLine();
+				try{
+					tienda.compraSegura(cuentaUsuario);
+				}catch(IllegalArgumentException e){
+					System.out.println("	El número de cuenta ingresado es incorrecto");
+				}catch(SaldoInsuficienteException ex){
+					System.out.println("	Su saldo es insuficiente");
+					System.out.println("	Tendremos que cancelar su compra:(");
+				}
+		
 		}
 		
 		tienda.generarTicket(false);
