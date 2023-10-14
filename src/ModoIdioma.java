@@ -31,7 +31,6 @@ public interface ModoIdioma{
 
 	/**
 	 * Metodo que lleva a cabo el proceso de compra segura, y despues genera el ticket del cliente.
-	 *
 	 */
 	public void ticket();
 }
