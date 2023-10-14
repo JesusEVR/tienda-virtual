@@ -114,7 +114,7 @@ public class Mexico implements ModoIdioma{
 		
 		do{
 		System.out.println("");
-		System.out.println("		1. Aniadir al carrito");
+		System.out.println("		1. Agregar al carrito");
 		System.out.println("		2. Terminar compra");
 		System.out.println("		0. Salir");	
 		System.out.print("Seleccione la opcion que desee ejecutar: ");
@@ -240,7 +240,7 @@ public class Mexico implements ModoIdioma{
 				try{
 					tienda.compraSegura(cuentaUsuario);
 				}catch(IllegalArgumentException e){
-					System.out.println("	El numero de cuenta ingresado es incorrecto");
+					System.out.println("	El numero de cuenta ingresado es incorrecto o.O");
 				}catch(SaldoInsuficienteException ex){
 					System.out.println("	Su saldo es insuficiente");
 					System.out.println("	Tendremos que cancelar su compra :(");
