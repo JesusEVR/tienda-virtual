@@ -11,9 +11,9 @@
 public class Lavadora implements Articulo{
 	
 	/**
-   * Constructor por omision del articulo Lavadora
-   *
-   */
+         * Constructor por omision del articulo Lavadora
+         *
+         */
 	public Lavadora(){
 	}
 
