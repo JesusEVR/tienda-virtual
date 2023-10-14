@@ -35,6 +35,6 @@ public class Television implements Articulo{
 	 * Devuelve el codigo de barras del artículo
 	 */
 	public String codigoBarras(){
-		return "ET100";
+		return "ET200";
 	}
 }
