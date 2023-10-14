@@ -1,15 +1,15 @@
 /**
-* Clase abstracta que permite aplicar un veinte porciento 
-* de descuento a un artículo
-*
-* @author paolasanv
-* @author Supr-Lilito
-* @author JesusEVR
-* @version octubre 2023
-* @see Articulo
-* @see Descuento
-*
-*/
+ * Clase abstracta que permite aplicar un veinte porciento 
+ * de descuento a un artículo
+ *
+ * @author paolasanv
+ * @author Supr-Lilito
+ * @author JesusEVR
+ * @version octubre 2023
+ * @see Articulo
+ * @see Descuento
+ *
+ */
 public class DescuentoVeinte extends Descuento{
 
 	/**
