@@ -35,6 +35,6 @@ public class Lavadora implements Articulo{
 	 * Devuelve el codigo de barras del artículo
 	 */
 	public String codigoBarras(){
-		return "OM200";
+		return "ED300";
 	}
 }
