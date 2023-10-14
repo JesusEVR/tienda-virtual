@@ -231,7 +231,7 @@ public class TiendaVirtual{
 	/**
 	 * Metodo que verifica si el carrito virtual esta vacio.
          * 
-         * @return 'true' si el carrito virtual tiene un artículo dentro, 'false' en el caso contrario
+         * @return 'true' si el carrito virtual no tiene articulos, 'false' en el caso contrario
 	 */
 	public boolean carritoVacio(){
 		return !carrito.tieneArticulo();
