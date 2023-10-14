@@ -43,7 +43,7 @@ public class Mexico implements ModoIdioma{
 	 */
 	public void saludar(){
 		System.out.println("");
-		System.out.println("	Bienvenido a la tienda");
+		System.out.println("	Bienvenido a la tienda CheemsMart");
 		System.out.println("");
 	}
 
@@ -52,7 +52,7 @@ public class Mexico implements ModoIdioma{
 	 */
 	public void despedir(){
 		System.out.println("");
-		System.out.println("	Gracias por su preferencia, regrese pronto");
+		System.out.println("	¡Gracias por tu preferencia, regresa pronto!");
 	}
 
 	/**
@@ -64,21 +64,21 @@ public class Mexico implements ModoIdioma{
 		
 		do{
 			System.out.println("");
-			System.out.println("		1. Ver catálogo");
+			System.out.println("		1. Ver catalogo");
 			System.out.println("		2. Comprar");
 			System.out.println("		0. Salir");
 			System.out.println("");
-			System.out.print("Seleccione la opción que desee ejecutar: ");
+			System.out.print("Seleccione la opcion que desee ejecutar: ");
 			while(true){
 					try {
 						String opcionUsuario = sc.nextLine();
 						opcion =  Integer.parseInt(opcionUsuario);
 						if(opcion >-1 && opcion < 3){ 
 							break;
-						}else{ System.out.print("		Por favor, elige una opción válida: ");
+						}else{ System.out.print("		Por favor, elige una opcion valida: ");
 						}
 					}catch (NumberFormatException ex){
-						System.out.print("		Por favor, elige una opción válida: ");
+						System.out.print("		Por favor, elige una opcion valida: ");
 					}
 			}
 
@@ -88,13 +88,13 @@ public class Mexico implements ModoIdioma{
 					break;
 				case 1:
 					System.out.println("");
-					System.out.println("---------- C A T A LO G O ----------- ");
+					System.out.println("---------- C A T A L O G O ----------- ");
 					tienda.verCatalogo();
 					seguir = true;
 					break;
 				case 2:
 					System.out.println("");
-					System.out.println("---------- R E A L I Z A R    C O M P R A  ----------- ");
+					System.out.println("---------- R E A L I Z A R     C O M P R A  ----------- ");
 					tienda.verCatalogo();
 					comprar();
 					seguir = false; //solo puede comprar una vez cada inicio de sesion
@@ -114,20 +114,20 @@ public class Mexico implements ModoIdioma{
 		
 		do{
 		System.out.println("");
-		System.out.println("		1. Añadir al carrito");
+		System.out.println("		1. Aniadir al carrito");
 		System.out.println("		2. Terminar compra");
 		System.out.println("		0. Salir");	
-		System.out.print("Seleccione la opción que desee ejecutar: ");
+		System.out.print("Seleccione la opcion que desee ejecutar: ");
 			while(true){
 					try {
 						String opcionUsuario = sc.nextLine();
 						opcion =  Integer.parseInt(opcionUsuario);
 						if(opcion >-1 && opcion < 3){ 
 							break;
-						}else{ System.out.println("		Por favor, elige una opción válida");
+						}else{ System.out.println("		Por favor, elige una opcion valida");
 						}
 					}catch (NumberFormatException ex){
-						System.out.println("		Por favor, elige una opción válida");
+						System.out.println("		Por favor, elige una opcion valida");
 					}
 			}
 
@@ -137,7 +137,7 @@ public class Mexico implements ModoIdioma{
 					seguir = false;
 					break;
 				case 1:
-					System.out.print("Escribe el codigo de barras del artículo: ");
+					System.out.print("Escribe el codigo de barras del articulo: ");
 					
 						codigoBarras = sc.nextLine();
 					
@@ -163,9 +163,9 @@ public class Mexico implements ModoIdioma{
 								//tienda.agregarAlCarrito(articulo);
 								
 								
-							}else{ System.out.println("\n		Codigo de barras inválido \n");}
+							}else{ System.out.println("\n		Codigo de barras invalido \n");}
 							
-						} else{ System.out.println("\n		Codigo de barras  inválido \n");}
+						} else{ System.out.println("\n		Codigo de barras invalido \n");}
 					
 					seguir = true;
 					break;
@@ -213,13 +213,13 @@ public class Mexico implements ModoIdioma{
 		oferta = random.nextInt(4);
 		switch(oferta){
 			case 1:
-				System.out.println("¡El día de hoy contamos con 10% de descuento en el departamento de alimentos!");
+				System.out.println("¡El dia de hoy contamos con 10% de descuento en el departamento de alimentos!");
 				break;
 			case 2:
-				System.out.println("¡El día de hoy contamos con 20% de descuento en el departamento de alimentos!");
+				System.out.println("¡El dia de hoy contamos con 20% de descuento en el departamento de alimentos!");
 				break;
 			case 3:
-				System.out.println("¡El día de hoy contamos con 30% de descuento en el departamento de alimentos!");
+				System.out.println("¡El dia de hoy contamos con 30% de descuento en el departamento de alimentos!");
 				break;
 		}
 	}
@@ -230,20 +230,20 @@ public class Mexico implements ModoIdioma{
 	public void ticket(){ //aqui sucede la compra segura y se genera el ticket **falta probar
 		if(tienda.puedeGenerarTicket()){
 			System.out.println("");
-			System.out.println("---------- C O M P R A       S E G U R A----------- ");
+			System.out.println("---------- C O M P R A    S E G U R A----------- ");
 			System.out.println("");
-			System.out.println("Su lista de compras se muestra a continuación: ");
+			System.out.println("Su lista de compras se muestra a continuacion: ");
 			System.out.println("");
 			//tienda.listaCompras();
-			System.out.println("Ingrese su número de cuenta para completar la transacción: ");
+			System.out.println("Ingrese su numero de cuenta para completar la transaccion: ");
 			String cuentaUsuario = sc.nextLine();
 				try{
 					tienda.compraSegura(cuentaUsuario);
 				}catch(IllegalArgumentException e){
-					System.out.println("	El número de cuenta ingresado es incorrecto");
+					System.out.println("	El numero de cuenta ingresado es incorrecto");
 				}catch(SaldoInsuficienteException ex){
 					System.out.println("	Su saldo es insuficiente");
-					System.out.println("	Tendremos que cancelar su compra:(");
+					System.out.println("	Tendremos que cancelar su compra :(");
 				}
 		
 		}
