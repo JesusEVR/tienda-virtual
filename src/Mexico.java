@@ -1,29 +1,66 @@
 import java.util.Scanner;
 import java.util.Random;
 
+/**
+ * Clase que define el estado de la tienda cuando el usuario es de nacionalidad mexicana.
+ *
+ * @author paolasanv
+ * @author Supr-Lilito
+ * @author JesusEVR
+ * @version octubre 2023
+ * @see ModoIdioma
+ *
+ */
 public class Mexico implements ModoIdioma{
-	
+	/**
+	 * Objeto tienda virtual que adaptara el idioma español latino.
+	 */
 	TiendaVirtual tienda;
+	/**
+	 * Objeto teclado que servira para que el usuario pueda introducir opciones.
+	 */
 	private Scanner sc = new Scanner(System.in);
+	/**
+	 * Objeto random que ayudara a la generacion aletaoria de ofertas.
+	 */
 	private Random random = new Random();
+	/**
+	 * Numero entero generado por el objeto random.
+	 */
 	int oferta;
 	
+	/**
+	 * Constructor por paramatros.
+         *
+         * @param t La tienda virtual que adoptara el idioma español latino.
+	 */
 	public Mexico(TiendaVirtual t){
 		tienda = t;
 	}
-	
+
+	/**
+	 * Metodo que saluda al usuario cuando se inicia la ejecucion.
+	 */
 	public void saludar(){
 		System.out.println("");
 		System.out.println("	Bienvenido a la tienda");
 		System.out.println("");
 	}
+
+	/**
+	 * Metodo que imprime una despedida para el usuario.
+	 */
 	public void despedir(){
 		System.out.println("");
 		System.out.println("	Gracias por su preferencia, regrese pronto");
 	}
+
+	/**
+	 * Metodo que despliega todo el proceso principal de la tienda CheemsMart, en idioma español (latinoamericano).
+	 */
 	public void entrarTienda(){
-		int opcion=0;
-		boolean seguir=false;
+		int opcion = 0;
+		boolean seguir = false;
 		
 		do{
 			System.out.println("");
@@ -65,11 +102,14 @@ public class Mexico implements ModoIdioma{
 			}
 		}while(seguir);
 	}
-	
+
+	/**
+	 * Metodo que despliega el proceso a llevar a cabo cuando se decide comprar un articulo.
+	 */
 	private void comprar(){
-		int opcion=0;
-		String codigoBarras="";
-		boolean seguir=false;
+		int opcion = 0;
+		String codigoBarras = "";
+		boolean seguir = false;
 		Articulo articulo;
 		
 		do{
@@ -138,6 +178,10 @@ public class Mexico implements ModoIdioma{
 	}
 	
 	// aplica su respectivo descuento 
+	/**
+	 * Metodo que aplica el descuento correspondiente a un articulo elegido,
+         * en caso de haber una oferta en el departamento donde éste pertenece.
+	 */
 	private void alimentoConDescuento(Articulo a){ 
 		
 		Articulo articulo;
@@ -162,6 +206,9 @@ public class Mexico implements ModoIdioma{
 		
 	}
 	
+	/**
+	 * Metodo que genera al azar la cantidad de descuento que tendra un departamento de productos.
+	 */
 	public void ofertas(){
 		oferta = random.nextInt(4);
 		switch(oferta){
@@ -176,7 +223,10 @@ public class Mexico implements ModoIdioma{
 				break;
 		}
 	}
-	
+
+	/**
+	 * Metodo que lleva a cabo el proceso de compra segura, y asi generar el ticket del cliente.
+	 */
 	public void ticket(){ //aqui sucede la compra segura y se genera el ticket **falta probar
 		if(tienda.puedeGenerarTicket()){
 			System.out.println("");
