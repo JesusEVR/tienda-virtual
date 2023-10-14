@@ -1,5 +1,5 @@
 /**
- * Interfaz que define las caracteristicas comunes de los artículo que
+ * Interfaz que define las caracteristicas comunes de los artículos que
  * ofrece la tienda CheemsMart
  *
  * @author paolasanv
