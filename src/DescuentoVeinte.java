@@ -11,18 +11,34 @@
 *
 */
 public class DescuentoVeinte extends Descuento{
-	
+
+	/**
+         * Constructor por parametros
+         *
+	 * @param centro El articulo que recibira un descuento en su precio
+         */
 	public DescuentoVeinte(Articulo centro){
 		super(centro);
 	}
-	
+
+	/**
+	 * Devuelve el precio del artículo con el descuento aplicado
+	 */
 	public double precio(){
 		double nuevoPrecio = 0.8 * centro.precio();
 		return nuevoPrecio;
 	}
+
+	/**
+	 * Devuelve una cadena con la información del articulo
+	 */
 	public String informacion(){
 		return centro.informacion() + " -- Precio con 20% de descuento: $" +precio()+ " MXN";
 	}
+
+	/**
+	 * Devuelve el codigo de barras del articulo
+	 */
 	public String codigoBarras(){
 		return centro.codigoBarras();
 	}
