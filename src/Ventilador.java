@@ -14,7 +14,7 @@ public class Ventilador implements Articulo{
          * Constructor por omision del articulo Ventilador
          *
          */
-	public Lavadora(){
+	public Ventilador(){
 	}
 
 	/**
