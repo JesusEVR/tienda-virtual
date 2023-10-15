@@ -1,10 +1,3 @@
-Electrodomesticos
-1. Lavadora ED300
-2. Microondas ED301
-3. Ventilador ED3002
-4. Refrigerador ED303
-5. Aspiradora ED304
-
 Alimentos
 1. Pan AL100
 2. Cereal AL101
@@ -21,3 +14,10 @@ Electronica
 3. Consola ET202
 4. Impresora ET203
 5. Celular ET204
+
+Electrodomesticos
+1. Lavadora ED300
+2. Microondas ED301
+3. Ventilador ED3002
+4. Refrigerador ED303
+5. Aspiradora ED304
