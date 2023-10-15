@@ -14,11 +14,11 @@ public class TiendaVirtual{
 	/**
 	 * Modo de tipo espaniol castellano
 	 */
-	//private ModoIdioma modoEspaniol;
+	private ModoIdioma modoEspaniol;
 	/**
 	 * Modo de tipo ingles
 	 */
-	//private ModoIdioma modoIngles;
+	private ModoIdioma modoIngles;
 	/**
 	 * Modo actual de la tienda virtual
 	 */
@@ -47,8 +47,8 @@ public class TiendaVirtual{
 	 */
 	public TiendaVirtual(CuentaCheemsMart cuenta){
 		modoEspaniolLatino = new Mexico(this);
-		//modoEspaniol = new Espania(this);
-		//modoIngles = new EEUU(this);
+		modoEspaniol = new Espania(this);
+		modoIngles = new EEUU(this);
 		usuarioActual = cuenta;
 		carrito = new CarritoVirtual();
 		canceloCompra = false;
@@ -101,23 +101,23 @@ public class TiendaVirtual{
 
  	/**
 	 * Metodo que devuelve el modo espaniol castellano.
-         *
+     *
 	 * @return modoEspaniol El atributo correspondiente al idioma espaniol castellano.
-	 *
+	 */
 	public ModoIdioma espaniol(){
 		return modoEspaniol;
 	}
  
 	/**
 	 * Metodo que devuelve el modo ingles.
-         *
+     *
 	 * @return modoIngles El atributo correspondiente al idioma ingles.
-	 *
+	 */
 	public ModoIdioma ingles(){
 		return modoIngles;
 	}
  
-	*/
+	
 
 	/**
 	 * Metodo que asigna un idioma a la tienda.
@@ -273,6 +273,11 @@ public class TiendaVirtual{
 	public void compraSegura(String numeroCuenta) throws SaldoInsuficienteException{
 		usuarioActual.verificarCompra(numeroCuenta);
 		usuarioActual.comprar(carrito.precio());
+	}
+	
+	
+	public String lugarDeEntrega(){
+		return usuarioActual.direccion();
 	}
 	
 }

@@ -11,7 +11,7 @@ import java.util.Random;
  * @see ModoIdioma
  *
  */
-public class Mexico implements ModoIdioma{
+public class Espania implements ModoIdioma{
 	/**
 	 * Objeto tienda virtual que adaptara el idioma español latino.
 	 */
@@ -34,7 +34,7 @@ public class Mexico implements ModoIdioma{
          *
          * @param t La tienda virtual que adopta el idioma español latinoamericano.
 	 */
-	public Mexico(TiendaVirtual t){
+	public Espania(TiendaVirtual t){
 		tienda = t;
 	}
 
@@ -42,7 +42,7 @@ public class Mexico implements ModoIdioma{
 	 * Metodo que saluda al usuario cuando se inicia la ejecucion.
 	 */
 	public void saludar(){
-		System.out.println("	¡Bienvenido a la tienda CheemsMart!");
+		System.out.println("	¡Bienvenido a la tienda CheemsMart! (España)");
 		System.out.println("");
 	}
 
@@ -51,7 +51,7 @@ public class Mexico implements ModoIdioma{
 	 */
 	public void despedir(){
 		System.out.println("");
-		System.out.println("	¡Gracias por tu preferencia, regresa pronto!");
+		System.out.println("	¡Gracias por tu preferencia, regresa pronto! (España)");
 	}
 
 	/**
@@ -146,8 +146,7 @@ public class Mexico implements ModoIdioma{
 								System.out.println("Codigo correcto");
 								//articulo = tienda.buscarAlimento(codigoBarras);
 								//if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
-								//this.alimentoConDescuento(articulo);
-				
+								//tienda.agregarAlCarrito(articulo);
 								
 							}else if(codigoBarras.toUpperCase().contains("ET")){ //pertenece al depto de electronica
 								System.out.println("Codigo correcto");
@@ -159,7 +158,7 @@ public class Mexico implements ModoIdioma{
 								System.out.println("Codigo correcto");
 								//articulo = tienda.buscarElectrodomestico(codigoBarras);
 								//if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
-								//tienda.agregarAlCarrito(articulo);
+								//this.electrodomesticoConDescuento(articulo);
 								
 								
 							}else{ System.out.println("\n		Codigo de barras invalido \n");}
@@ -179,25 +178,25 @@ public class Mexico implements ModoIdioma{
 	// aplica su respectivo descuento 
 	/**
 	 * Metodo que aplica el descuento correspondiente a un articulo elegido,
-         * en caso de haber una oferta en el departamento donde pertenece.
+     * en caso de haber una oferta en el departamento donde pertenece.
 	 */
-	private void alimentoConDescuento(Articulo a){ 
+	private void electrodomesticoConDescuento(Articulo a){ 
 		
 		Articulo articulo;
 		
 		switch(oferta){
-			case 0: //Los alimentos no tienen descuento
+			case 0:
 				tienda.agregarAlCarrito(a);
 				break;
-			case 1:  //Los alimentos tienen 10% descuento
+			case 1: 
 				articulo = new DescuentoDiez(a); 
 				tienda.agregarAlCarrito(articulo);
 				break;
-			case 2:  //Los alimentos tienen 20% descuento
+			case 2: 
 				articulo = new DescuentoVeinte(a); 
 				tienda.agregarAlCarrito(articulo);
 				break;
-			case 3:  //Los alimentos tienen 30% descuento
+			case 3:  
 				articulo = new DescuentoTreinta(a); 
 				tienda.agregarAlCarrito(articulo);
 				break;
@@ -212,13 +211,13 @@ public class Mexico implements ModoIdioma{
 		oferta = random.nextInt(4);
 		switch(oferta){
 			case 1:
-				System.out.println("¡El dia de hoy contamos con 10% de descuento en el departamento de alimentos!");
+				System.out.println("¡El dia de hoy contamos con 10% de descuento en el departamento de electrodomesticos!");
 				break;
 			case 2:
-				System.out.println("¡El dia de hoy contamos con 20% de descuento en el departamento de alimentos!");
+				System.out.println("¡El dia de hoy contamos con 20% de descuento en el departamento de electrodomesticos!");
 				break;
 			case 3:
-				System.out.println("¡El dia de hoy contamos con 30% de descuento en el departamento de alimentos!");
+				System.out.println("¡El dia de hoy contamos con 30% de descuento en el departamento de electrodomesticos!");
 				break;
 		}
 	}

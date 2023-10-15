@@ -43,21 +43,23 @@ public class CheemsMart{
 		if(usuarioActual.pais().toLowerCase().equals("mexico")){
 			tienda.asignarIdioma(tienda.espaniolLatino());
 		
-		}/*else if(usuarioActual.pais().toLowerCase().equals("españa")){
+		}else if(usuarioActual.pais().toLowerCase().equals("españa")){
 			tienda.asignarIdioma(tienda.espaniol());
 		
 		}else if(usuarioActual.pais().toLowerCase().equals("eeuu")){
 			tienda.asignarIdioma(tienda.ingles());
-		}*/
+		}
 	
 	}
 	
 	public void entrarAlaTienda(){
+		System.out.println("\n * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
 		tienda.saludar();
 		tienda.ofertas();
 		tienda.entrarTienda();
 		tienda.ticket();
 		tienda.despedir();	
+		System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
 		existeUsuario=false;
 	}
 

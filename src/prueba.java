@@ -8,20 +8,15 @@ public class prueba{
 		Scanner sc = new Scanner(System.in);
 	
 		//Prueba de decorator y composite**
-		CarritoVirtual carrito = new CarritoVirtual();
+		/*CarritoVirtual carrito = new CarritoVirtual();
 		Articulo pan = new Pan();
 		carrito.agregarArticulo(pan);
 		Articulo d = new DescuentoTreinta(pan);
 		carrito.agregarArticulo(d);
-		System.out.println(carrito.informacion());
+		System.out.println(carrito.informacion());*/
 
-		//Prueba de crear una cuenta cheemsmart y acceder a los datos*
-		Persona p = new Persona("Persona1", "direccion", 55742587);
-		CuentaBancaria banco = new CuentaBancaria(p, "123456", 12.0);
-		CuentaCheemsMart c = new CuentaCheemsMart(banco, "user00", "contra123", "mexico");
-		
 		//Prueba de comprar 
-		System.out.println("Ingresando numero de cuenta: 123456");
+		/*System.out.println("Ingresando numero de cuenta: 123456");
 		try{
 			c.verificarCompra("1237456");
 			c.comprar(100);
@@ -29,7 +24,7 @@ public class prueba{
 			System.out.println("Numero de cuenta invalido");
 		}catch(SaldoInsuficienteException i){
 			System.out.println("Saldo insuficiente");
-		}
+		}*/
 		
 		
 		//prueba mexico
@@ -39,13 +34,28 @@ public class prueba{
 		me.entrarTienda();
 		me.ticket();*/
 		
+		Persona arturo = new Persona("Arturo", "Av. de la Constitucion, 17, 45530 Santa Olalla, Toledo", 55258725);
+		CuentaBancaria cuentaB1 = new CuentaBancaria(arturo, "ES1234", 12000.0);
+		CuentaCheemsMart cuentaUno = new CuentaCheemsMart(cuentaB1, "ArturoLemus", "paella", "España");
+		
+		
+		Persona rodrigo = new Persona("Rodrigo", "125 Cave Dr, Eldon, MO 65026", 55821197);
+		CuentaBancaria cuentaB2 = new CuentaBancaria(rodrigo, "EU1234", 13000.0);
+		CuentaCheemsMart cuentaDos = new CuentaCheemsMart(cuentaB2, "RodrigoTA", "pizza", "EEUU");
+		
+		
+		Persona rosa = new Persona("Rosa Victoria", "Felipe Carrillo Puerto 32, Coyoacan 04000 ", 55301187);
+		CuentaBancaria cuentaB3 = new CuentaBancaria(rosa, "ME1234", 9000.0);
+		CuentaCheemsMart cuentaTres = new CuentaCheemsMart(cuentaB3, "RosaUwU", "cheems", "Mexico");
 		
 		CheemsMart tienda = new CheemsMart();
-		tienda.agregarCliente(c);
+		tienda.agregarCliente(cuentaUno);
+		tienda.agregarCliente(cuentaDos);
+		tienda.agregarCliente(cuentaTres);
 		
 		do{
 		System.out.println("");
-		System.out.println("-*-*-*-*-* T I E N D A  C H E E M S M A R T -*-*-*-*-* ");
+		System.out.println("-*-*-*-*-*-* T I E N D A  C H E E M S M A R T -*-*-*-*-*-* ");
 		System.out.println("");
 		System.out.println("		1. Iniciar Sesion");
 		System.out.println("		0. Salir de la tienda");
@@ -57,10 +67,10 @@ public class prueba{
 					opcion =  Integer.parseInt(opcionUsuario);
 					if(opcion >-1 && opcion < 2){ 
 						break;
-					}else{ System.out.println("		Por favor, elige una opción válida");
+					}else{ System.out.print("		Por favor, elige una opción válida: ");
 					}
 				}catch (NumberFormatException ex){
-					System.out.println("		Por favor, elige una opción válida");
+					System.out.print("		Por favor, elige una opción válida: ");
 				}
 			}
 				switch(opcion){

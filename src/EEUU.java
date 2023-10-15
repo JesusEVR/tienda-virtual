@@ -11,7 +11,7 @@ import java.util.Random;
  * @see ModoIdioma
  *
  */
-public class Mexico implements ModoIdioma{
+public class EEUU implements ModoIdioma{
 	/**
 	 * Objeto tienda virtual que adaptara el idioma español latino.
 	 */
@@ -34,7 +34,7 @@ public class Mexico implements ModoIdioma{
          *
          * @param t La tienda virtual que adopta el idioma español latinoamericano.
 	 */
-	public Mexico(TiendaVirtual t){
+	public EEUU(TiendaVirtual t){
 		tienda = t;
 	}
 
@@ -42,7 +42,7 @@ public class Mexico implements ModoIdioma{
 	 * Metodo que saluda al usuario cuando se inicia la ejecucion.
 	 */
 	public void saludar(){
-		System.out.println("	¡Bienvenido a la tienda CheemsMart!");
+		System.out.println("	Welcome to CheemsMart store");
 		System.out.println("");
 	}
 
@@ -51,7 +51,7 @@ public class Mexico implements ModoIdioma{
 	 */
 	public void despedir(){
 		System.out.println("");
-		System.out.println("	¡Gracias por tu preferencia, regresa pronto!");
+		System.out.println("	Thanks 4 ur preference, be back soon!");
 	}
 
 	/**
@@ -63,21 +63,21 @@ public class Mexico implements ModoIdioma{
 		
 		do{
 			System.out.println("");
-			System.out.println("		1. Ver catalogo");
-			System.out.println("		2. Comprar");
-			System.out.println("		0. Salir");
+			System.out.println("		1. See catalogue");
+			System.out.println("		2. Buy");
+			System.out.println("		0. Exit");
 			System.out.println("");
-			System.out.print("Seleccione la opcion que desee ejecutar: ");
+			System.out.print("Select the opcion u want to execute: ");
 			while(true){
 					try {
 						String opcionUsuario = sc.nextLine();
 						opcion =  Integer.parseInt(opcionUsuario);
 						if(opcion >-1 && opcion < 3){ 
 							break;
-						}else{ System.out.print("		Por favor, elige una opcion valida: ");
+						}else{ System.out.print("		Please, select a valid opcion: ");
 						}
 					}catch (NumberFormatException ex){
-						System.out.print("		Por favor, elige una opcion valida: ");
+						System.out.print("		Please, select a valid opcion: ");
 					}
 			}
 
@@ -87,13 +87,13 @@ public class Mexico implements ModoIdioma{
 					break;
 				case 1:
 					System.out.println("");
-					System.out.println("---------- C A T A L O G O ----------- ");
+					System.out.println("---------- C A T A L O G U E ----------- ");
 					tienda.verCatalogo();
 					seguir = true;
 					break;
 				case 2:
 					System.out.println("");
-					System.out.println("---------- R E A L I Z A R     C O M P R A  ----------- ");
+					System.out.println("---------- P L A C E   O R D E R ----------- ");
 					tienda.verCatalogo();
 					comprar();
 					seguir = false; //solo puede comprar una vez cada inicio de sesion
@@ -113,20 +113,20 @@ public class Mexico implements ModoIdioma{
 		
 		do{
 		System.out.println("");
-		System.out.println("		1. Agregar al carrito");
-		System.out.println("		2. Terminar compra");
-		System.out.println("		0. Salir");	
-		System.out.print("Seleccione la opcion que desee ejecutar: ");
+		System.out.println("		1. Add to cart");
+		System.out.println("		2. Chekout");
+		System.out.println("		0. Exit");	
+		System.out.print("Select the opcion u want to execute: ");
 			while(true){
 					try {
 						String opcionUsuario = sc.nextLine();
 						opcion =  Integer.parseInt(opcionUsuario);
 						if(opcion >-1 && opcion < 3){ 
 							break;
-						}else{ System.out.print("		Por favor, elige una opcion valida: ");
+						}else{ System.out.print("		Please, select a valid opcion: ");
 						}
 					}catch (NumberFormatException ex){
-						System.out.print("		Por favor, elige una opcion valida: ");
+						System.out.print("		Please, select a valid opcion: ");
 					}
 			}
 
@@ -136,7 +136,7 @@ public class Mexico implements ModoIdioma{
 					seguir = false;
 					break;
 				case 1:
-					System.out.print("Escribe el codigo de barras del articulo: ");
+					System.out.print("Write the product's barcode: ");
 					
 						codigoBarras = sc.nextLine();
 					
@@ -145,26 +145,25 @@ public class Mexico implements ModoIdioma{
 							if(codigoBarras.toUpperCase().contains("AL")){ //pertenece al depto de alimentos
 								System.out.println("Codigo correcto");
 								//articulo = tienda.buscarAlimento(codigoBarras);
-								//if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
-								//this.alimentoConDescuento(articulo);
-				
+								//if(articulo == null) System.out.println("\n		Invalid barcode \n");
+								//tienda.agregarAlCarrito(articulo);
 								
 							}else if(codigoBarras.toUpperCase().contains("ET")){ //pertenece al depto de electronica
 								System.out.println("Codigo correcto");
 								//articulo = tienda.buscarElectronico(codigoBarras);
-								//if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
-								//tienda.agregarAlCarrito(articulo);
+								//if(articulo == null) System.out.println("\n		Invalid barcode \n");
+								//this.electronicoConDescuento(articulo);
 								
 							}else if(codigoBarras.toUpperCase().contains("ED")){ //pertenece al depto de electrodomesticos
 								System.out.println("Codigo correcto");
 								//articulo = tienda.buscarElectrodomestico(codigoBarras);
-								//if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								//if(articulo == null) System.out.println("\n		Invalid barcode \n");
 								//tienda.agregarAlCarrito(articulo);
 								
 								
-							}else{ System.out.println("\n		Codigo de barras invalido \n");}
+							}else{ System.out.println("\n		Invalid barcode \n");}
 							
-						} else{ System.out.println("\n		Codigo de barras invalido \n");}
+						} else{ System.out.println("\n		Invalid barcode \n");}
 					
 					seguir = true;
 					break;
@@ -179,25 +178,25 @@ public class Mexico implements ModoIdioma{
 	// aplica su respectivo descuento 
 	/**
 	 * Metodo que aplica el descuento correspondiente a un articulo elegido,
-         * en caso de haber una oferta en el departamento donde pertenece.
+     * en caso de haber una oferta en el departamento donde pertenece.
 	 */
-	private void alimentoConDescuento(Articulo a){ 
+	private void electronicoConDescuento(Articulo a){ 
 		
 		Articulo articulo;
 		
 		switch(oferta){
-			case 0: //Los alimentos no tienen descuento
+			case 0:
 				tienda.agregarAlCarrito(a);
 				break;
-			case 1:  //Los alimentos tienen 10% descuento
+			case 1: 
 				articulo = new DescuentoDiez(a); 
 				tienda.agregarAlCarrito(articulo);
 				break;
-			case 2:  //Los alimentos tienen 20% descuento
+			case 2: 
 				articulo = new DescuentoVeinte(a); 
 				tienda.agregarAlCarrito(articulo);
 				break;
-			case 3:  //Los alimentos tienen 30% descuento
+			case 3:  
 				articulo = new DescuentoTreinta(a); 
 				tienda.agregarAlCarrito(articulo);
 				break;
@@ -212,13 +211,13 @@ public class Mexico implements ModoIdioma{
 		oferta = random.nextInt(4);
 		switch(oferta){
 			case 1:
-				System.out.println("¡El dia de hoy contamos con 10% de descuento en el departamento de alimentos!");
+				System.out.println("Today we have 10% off at the electronic department!");
 				break;
 			case 2:
-				System.out.println("¡El dia de hoy contamos con 20% de descuento en el departamento de alimentos!");
+				System.out.println("Today we have 20% off at the electronic department!");
 				break;
 			case 3:
-				System.out.println("¡El dia de hoy contamos con 30% de descuento en el departamento de alimentos!");
+				System.out.println("Today we have 30% off at the electronic department!");
 				break;
 		}
 	}
@@ -229,20 +228,20 @@ public class Mexico implements ModoIdioma{
 	public void ticket(){ //aqui sucede la compra segura y se genera el ticket **falta probar
 		if(tienda.puedeGenerarTicket()){
 			System.out.println("");
-			System.out.println("---------- C O M P R A    S E G U R A ----------- ");
+			System.out.println("---------- S E C U R E    S H O P P I N G  ----------- ");
 			System.out.println("");
-			System.out.println("Su lista de compras se muestra a continuacion: ");
+			System.out.println("Your shopping list is shown below: ");
 			System.out.println("");
 			//tienda.listaCompras();
-			System.out.println("Ingrese su numero de cuenta para completar la transaccion: ");
+			System.out.println("Write your bank account to pay: ");
 			String cuentaUsuario = sc.nextLine();
 				try{
 					tienda.compraSegura(cuentaUsuario);
 				}catch(IllegalArgumentException e){
-					System.out.println("	El numero de cuenta ingresado es incorrecto o.O");
+					System.out.println("	The account number is incorrect o.O");
 				}catch(SaldoInsuficienteException ex){
-					System.out.println("	Su saldo es insuficiente");
-					System.out.println("	Tendremos que cancelar su compra :(");
+					System.out.println("	Your balance is not enough");
+					System.out.println("	We have to cancel you shopping :(");
 				}
 		
 		}
