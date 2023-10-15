@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class Mexico implements ModoIdioma{
 	/**
-	 * Objeto tienda virtual que adaptara el idioma espaniol latino.
+	 * Objeto tienda virtual que adaptara el idioma español latino.
 	 */
 	TiendaVirtual tienda;
 	/**
@@ -32,7 +32,7 @@ public class Mexico implements ModoIdioma{
 	/**
 	 * Constructor por paramatros.
          *
-         * @param t La tienda virtual que adoptara el idioma espaniol latino.
+         * @param t La tienda virtual que adopta el idioma español latinoamericano.
 	 */
 	public Mexico(TiendaVirtual t){
 		tienda = t;
@@ -56,7 +56,7 @@ public class Mexico implements ModoIdioma{
 	}
 
 	/**
-	 * Metodo que despliega todo el proceso principal de la tienda CheemsMart, en idioma espaniol (latinoamericano).
+	 * Metodo que despliega todo el proceso principal de la tienda CheemsMart, en idioma español (latinoamericano).
 	 */
 	public void entrarTienda(){
 		int opcion = 0;
@@ -180,7 +180,7 @@ public class Mexico implements ModoIdioma{
 	// aplica su respectivo descuento 
 	/**
 	 * Metodo que aplica el descuento correspondiente a un articulo elegido,
-         * en caso de haber una oferta en el departamento donde éste pertenece.
+         * en caso de haber una oferta en el departamento donde pertenece.
 	 */
 	private void alimentoConDescuento(Articulo a){ 
 		
