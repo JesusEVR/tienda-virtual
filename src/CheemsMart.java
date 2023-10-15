@@ -35,7 +35,7 @@ public class CheemsMart{
 					existeUsuario=true;
 				}
 			}
-			if(!existeUsuario) System.out.println("\n		Los datos ingresados son incorrecto o el usuario no existe \n"); 
+			if(!existeUsuario) System.out.println("\n		Los datos ingresados son incorrectos o el usuario no existe \n"); 
 		
 	}
 	
