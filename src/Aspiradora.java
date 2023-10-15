@@ -11,7 +11,7 @@
 public class Aspiradora implements Articulo{
 	
 	/**
-         * Constructor por omision del articulo Lavadora
+         * Constructor por omision del articulo Aspiradora
          *
          */
 	public Aspiradora(){
