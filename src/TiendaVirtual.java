@@ -166,7 +166,7 @@ public class TiendaVirtual{
 	 * @return articulo El articulo correspondiente al codigo ingresado
 	 */
 	public Articulo buscarAlimento(String codigoBarras){
-		System.out.println("buscando el articulo en el catalogo de alimentos..");
+		System.out.println("Buscando el articulo en el catalogo de alimentos..");
 		
 		/*
 		Catalogo catalogoAlimento = new CatalogoAlimento();
@@ -189,7 +189,7 @@ public class TiendaVirtual{
 	 * @return articulo El articulo correspondiente al codigo ingresado
 	 */
 	public Articulo buscarElectrodomestico(String codigoBarras){
-		System.out.println("buscando el articulo en el catalogo de electrodomesticos...");
+		System.out.println("Buscando el articulo en el catalogo de electrodomesticos...");
 		return null;
 	}
 
@@ -200,7 +200,7 @@ public class TiendaVirtual{
 	 * @return articulo El articulo correspondiente al codigo ingresado
 	 */
 	public Articulo buscarElectronico(String codigoBarras){
-		System.out.println("buscando el articulo en el catalogo de electronica...");
+		System.out.println("Buscando el articulo en el catalogo de electronica...");
 		return null;
 	}
 
