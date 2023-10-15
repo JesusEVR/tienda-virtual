@@ -11,9 +11,9 @@
 public class Microondas implements Articulo{
 	
 	/**
-   * Constructor por omision del articulo Microondas
-   *
-   */
+         * Constructor por omision del articulo Microondas
+         *
+         */
 	public Microondas(){
 	}
 
