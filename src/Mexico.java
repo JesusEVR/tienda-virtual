@@ -230,7 +230,7 @@ public class Mexico implements ModoIdioma{
 	public void ticket(){ //aqui sucede la compra segura y se genera el ticket **falta probar
 		if(tienda.puedeGenerarTicket()){
 			System.out.println("");
-			System.out.println("---------- C O M P R A    S E G U R A----------- ");
+			System.out.println("---------- C O M P R A    S E G U R A ----------- ");
 			System.out.println("");
 			System.out.println("Su lista de compras se muestra a continuacion: ");
 			System.out.println("");
