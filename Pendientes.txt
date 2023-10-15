@@ -1,6 +1,4 @@
 - Marcar diferencia entre el español latino y español castellano
 - Bloque Iteraador
-- Parte del bloque State
-- Mas produtos
 - Documentar CheemsMart
 - Documentar las clases que aun no son creadas
