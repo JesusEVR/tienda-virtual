@@ -1,0 +1,23 @@
+Electrodomesticos
+1. Lavadora
+2. Microondas
+3. Ventilador
+4. Refrigerador
+5. Aspiradora
+
+Alimentos
+1. Pan
+2. Cereal
+3. Galletas
+4. Queso
+5. Gelatina
+6. Arroz
+7. Helado
+8. Leche
+
+Electronica
+1. Television
+2. Laptop
+3. Consola
+4. Impresora
+5. Celular
