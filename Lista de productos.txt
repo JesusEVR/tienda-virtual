@@ -1,7 +1,7 @@
 Alimentos
 1. Pan AL100
 2. Cereal AL101
-3. Galletas AL102
+3. Caja de Galletas AL102
 4. Queso AL103
 5. Gelatina AL104
 6. Arroz AL105
