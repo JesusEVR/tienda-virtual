@@ -42,9 +42,9 @@ public class TiendaVirtual{
 	private boolean puedeGenerarTicket;
 
 	/**
-	 * Constructor por paramatros.
-         *
-         * @param cuenta La cuenta de tipo CheemsMart con la que se accede a la tienda.
+	 * Constructor que recibe como parametro la cuenta del usuario actual.
+     *
+     * @param cuenta La cuenta de tipo CheemsMart con la que se accede a la tienda.
 	 */
 	public TiendaVirtual(CuentaCheemsMart cuenta){
 		modoEspaniolLatino = new Mexico(this);
@@ -93,7 +93,7 @@ public class TiendaVirtual{
 
 	/**
 	 * Metodo que devuelve el modo espaniol latino.
-         *
+     *
 	 * @return modoEspaniolLatino El atributo correspondiente al idioma espaniol latinoamericano.
 	 */
 	public ModoIdioma espaniolLatino(){
@@ -142,7 +142,6 @@ public class TiendaVirtual{
 	public void catalogoElectronica(){
 		Catalogo catalogoElectronica = new CatalogoElectronica();
 		Iterator iteradorElectronica = catalogoElectronica.creaIterador();
-
 		System.out.println("***** CATALOGO ELECTRONICA *******");
 		System.out.println("");
 		while(iteradorElectronica.hasNext()){
@@ -158,7 +157,6 @@ public class TiendaVirtual{
 	public void catalogoElectrodomesticos(){
 		Catalogo catalogoElectrodomestico = new CatalogoElectrodomestico();
 		Iterator iteradorElectrodomesticos = catalogoElectrodomestico.creaIterador();
-		
 		System.out.println("***** CATALOGO ELECTRODOMESTICOS *******");
 		System.out.println("");
 		while(iteradorElectrodomesticos.hasNext()){
@@ -174,7 +172,6 @@ public class TiendaVirtual{
 	public void catalogoAlimentos(){
 		Catalogo catalogoAlimento = new CatalogoAlimento();
 		Iterator iteradorAlimentos = catalogoAlimento.creaIterador();
-
 		System.out.println("***** CATALOGO ALIMENTOS *******");
 		System.out.println("");
 		while(iteradorAlimentos.hasNext()){
@@ -186,7 +183,7 @@ public class TiendaVirtual{
 
 	/**
 	 * Metodo que busca un articulo alimenticio en el catalogo de alimentos.
-         *
+     *
 	 * @param codigoBarras El codigo de barras correspondiente a un articulo del catalogo
 	 * @return articulo El articulo correspondiente al codigo ingresado
 	 */
@@ -201,14 +198,12 @@ public class TiendaVirtual{
 					return articulo;
 				}
 		}
-		
-		
 		return null;
 	}
 	
 	/**
 	 * Metodo que busca un articulo electrodomestico en el catalogo de eleectrodomesticos.
-         *
+     *
 	 * @param codigoBarras El codigo de barras correspondiente a un articulo del catalogo
 	 * @return articulo El articulo correspondiente al codigo ingresado
 	 */
@@ -229,7 +224,7 @@ public class TiendaVirtual{
 
 	/**
 	 * Metodo que busca un articulo electronico en el catalogo de electrocnica.
-         *
+     *
 	 * @param codigoBarras El codigo de barras correspondiente a un articulo del catalogo
 	 * @return articulo El articulo correspondiente al codigo ingresado
 	 */
@@ -264,7 +259,7 @@ public class TiendaVirtual{
 
 	/**
 	 * Devuelve el atributo canceloCompra.
-         *
+     *
 	 * @return 'true' si la compra ha sido cancelada, 'false' en el caso contrario.
 	 */
 	public boolean canceloCompra(){
@@ -273,8 +268,8 @@ public class TiendaVirtual{
 
 	/**
 	 * Metodo que verifica si el carrito virtual esta vacio.
-         * 
-         * @return 'true' si el carrito virtual no tiene articulos, 'false' en el caso contrario
+     * 
+     * @return 'true' si el carrito virtual no tiene articulos, 'false' en el caso contrario
 	 */
 	public boolean carritoVacio(){
 		return !carrito.tieneArticulo();
@@ -282,7 +277,7 @@ public class TiendaVirtual{
 
 	/**
 	 * Asigna un nuevo valor booleano al atributo puedeGenerarTicket.
-         *
+     *
 	 * @param b El nuevo valor booleano del atributo
 	 */
 	public void generarTicket(boolean b){
@@ -291,7 +286,7 @@ public class TiendaVirtual{
 
 	/**
 	 * Devuelve el atributo puedeGenerarTicket.
-         *
+     *
 	 * @return 'true' si es posible generar el ticket de compra, 'false' en el caso contrario.
 	 */
 	public boolean puedeGenerarTicket(){
@@ -303,13 +298,13 @@ public class TiendaVirtual{
 	 */
 	public void listaCompras(){
 		System.out.println(carrito.informacion());
-		System.out.println("	Total: $"+ carrito.precio()+ " MXN");
+		System.out.println("			Total: $"+ carrito.precio()+ " MXN");
 	}
 	
 	/**
 	 * Metodo que se asegura de que el numero de cuenta ingresado por el usuario sea correcto.
 	 *
-         * @param numero El numero de cuenta ingresado por el cliente
+     * @param numero El numero de cuenta ingresado por el cliente
 	 * @throws SaldoInsuficienteException si el saldo en la cuenta bancaria es insuficiente.
 	 * @throws IllegalArgumentException si el numero de cuenta bancaria ingresado por el cliente no corresponde al que esta registrado en el sistema.
 	 */
@@ -318,7 +313,11 @@ public class TiendaVirtual{
 		usuarioActual.comprar(carrito.precio());
 	}
 	
-	
+	/**
+	* Metodo que devuelve la direccion del usuario
+	*
+	* @retrun cadena con la informacion
+	*/
 	public String lugarDeEntrega(){
 		return usuarioActual.direccion();
 	}

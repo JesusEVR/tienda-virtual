@@ -96,7 +96,7 @@ public class EEUU implements ModoIdioma{
 					System.out.println("---------- P L A C E   O R D E R ----------- ");
 					tienda.verCatalogo();
 					comprar();
-					seguir = false; //solo puede comprar una vez cada inicio de sesion
+					seguir = false; 
 					break;
 			}
 		}while(seguir);
@@ -136,30 +136,23 @@ public class EEUU implements ModoIdioma{
 					seguir = false;
 					break;
 				case 1:
-					System.out.print("Write the product's barcode: ");
-					
-						codigoBarras = sc.nextLine();
-					
-						if(codigoBarras.length()==5){ //el codigo tiene 5 caracteres
-							
-							if(codigoBarras.toUpperCase().contains("AL")){ //pertenece al depto de alimentos
-								//System.out.println("Codigo correcto");
+					System.out.print("\n"+"Write the product's barcode: ");
+					codigoBarras = sc.nextLine();
+						if(codigoBarras.length()==5){
+							if(codigoBarras.toUpperCase().contains("AL")){ 
 								articulo = tienda.buscarAlimento(codigoBarras.toUpperCase());
 								if(articulo == null) System.out.println("\n		Invalid barcode \n");
 								tienda.agregarAlCarrito(articulo);
 								
-							}else if(codigoBarras.toUpperCase().contains("ET")){ //pertenece al depto de electronica
-								//System.out.println("Codigo correcto");
+							}else if(codigoBarras.toUpperCase().contains("ET")){ 
 								articulo = tienda.buscarElectronico(codigoBarras.toUpperCase());
 								if(articulo == null) System.out.println("\n		Invalid barcode \n");
 								this.electronicoConDescuento(articulo);
 								
-							}else if(codigoBarras.toUpperCase().contains("ED")){ //pertenece al depto de electrodomesticos
-								//System.out.println("Codigo correcto");
+							}else if(codigoBarras.toUpperCase().contains("ED")){ 
 								articulo = tienda.buscarElectrodomestico(codigoBarras.toUpperCase());
 								if(articulo == null) System.out.println("\n		Invalid barcode \n");
 								tienda.agregarAlCarrito(articulo);
-								
 								
 							}else{ System.out.println("\n		Invalid barcode \n");}
 							
@@ -174,16 +167,13 @@ public class EEUU implements ModoIdioma{
 			}
 		}while(seguir);
 	}
-	
-	// aplica su respectivo descuento 
+
 	/**
 	 * Metodo que aplica el descuento correspondiente a un articulo elegido,
      * en caso de haber una oferta en el departamento donde pertenece.
 	 */
 	private void electronicoConDescuento(Articulo a){ 
-		
 		Articulo articulo;
-		
 		switch(oferta){
 			case 0:
 				tienda.agregarAlCarrito(a);
@@ -201,7 +191,6 @@ public class EEUU implements ModoIdioma{
 				tienda.agregarAlCarrito(articulo);
 				break;
 		}
-		
 	}
 	
 	/**
@@ -225,27 +214,44 @@ public class EEUU implements ModoIdioma{
 	/**
 	 * Metodo que lleva a cabo el proceso de compra segura, y asi generar el ticket del cliente.
 	 */
-	public void ticket(){ //aqui sucede la compra segura y se genera el ticket **falta probar
+	public void ticket(){
 		if(tienda.puedeGenerarTicket()){
+		boolean continuar=true;
+		boolean cuentaExitosa=false; 
+		int contador =0;
 			System.out.println("");
 			System.out.println("---------- S E C U R E    S H O P P I N G  ----------- ");
 			System.out.println("");
 			System.out.println("Your shopping list is shown below: ");
 			System.out.println("");
 			tienda.listaCompras();
-			System.out.print("Write your bank account to pay: ");
+			do{
+			System.out.print("\n"+"Write your bank account to pay: ");
 			String cuentaUsuario = sc.nextLine();
 				try{
+					contador++;
 					tienda.compraSegura(cuentaUsuario);
+					cuentaExitosa=true;
+					continuar=false;
 				}catch(IllegalArgumentException e){
-					System.out.println("	The account number is incorrect o.O");
+					System.out.println("\n	The account number is incorrect o.O");
+					if(contador>2){
+						System.out.println("\n		You have exceeded the numbers of attempts allowed!");
+						System.out.println("	For security, we must logging out from your account");
+						continuar=false;
+					}
 				}catch(SaldoInsuficienteException ex){
-					System.out.println("	Your balance is not enough");
-					System.out.println("	We have to cancel you shopping :(");
-				}
-		
+					System.out.println("\n		Your balance is not enough");
+					System.out.println("	We have to cancel your shopping :(");
+					continuar=false;
+				}	
+			}while(continuar);
+			
+			if(cuentaExitosa){
+				System.out.println("		¡Your purchase was successfully completed!");
+				System.out.println("Your products will be delivered at " + tienda.lugarDeEntrega()+ " within 5 working days");
+			}
 		}
-		
 		tienda.generarTicket(false);
 	}
 }

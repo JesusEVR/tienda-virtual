@@ -96,7 +96,7 @@ public class Mexico implements ModoIdioma{
 					System.out.println("---------- R E A L I Z A R     C O M P R A  ----------- ");
 					tienda.verCatalogo();
 					comprar();
-					seguir = false; //solo puede comprar una vez cada inicio de sesion
+					seguir = false; 
 					break;
 			}
 		}while(seguir);
@@ -136,36 +136,24 @@ public class Mexico implements ModoIdioma{
 					seguir = false;
 					break;
 				case 1:
-					System.out.print("Escribe el codigo de barras del articulo: ");
-					
+					System.out.print("\n"+"Escribe el codigo de barras del articulo: ");
 						codigoBarras = sc.nextLine();
-					
-						if(codigoBarras.length()==5){ //el codigo tiene 5 caracteres
-							
-							if(codigoBarras.toUpperCase().contains("AL")){ //pertenece al depto de alimentos
-								//System.out.println("Codigo correcto");
+						if(codigoBarras.length()==5){ 
+							if(codigoBarras.toUpperCase().contains("AL")){ 
 								articulo = tienda.buscarAlimento(codigoBarras.toUpperCase());
 								if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
 								this.alimentoConDescuento(articulo);
-				
-								
-							}else if(codigoBarras.toUpperCase().contains("ET")){ //pertenece al depto de electronica
-								//System.out.println("Codigo correcto");
+							}else if(codigoBarras.toUpperCase().contains("ET")){ 
 								articulo = tienda.buscarElectronico(codigoBarras.toUpperCase());
 								if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
 								tienda.agregarAlCarrito(articulo);
-								
-							}else if(codigoBarras.toUpperCase().contains("ED")){ //pertenece al depto de electrodomesticos
-								//System.out.println("Codigo correcto");
+							}else if(codigoBarras.toUpperCase().contains("ED")){ 
 								articulo = tienda.buscarElectrodomestico(codigoBarras.toUpperCase());
 								if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
 								tienda.agregarAlCarrito(articulo);
-								
-								
 							}else{ System.out.println("\n		Codigo de barras invalido \n");}
 							
 						} else{ System.out.println("\n		Codigo de barras invalido \n");}
-					
 					seguir = true;
 					break;
 				case 2:
@@ -176,28 +164,26 @@ public class Mexico implements ModoIdioma{
 		}while(seguir);
 	}
 	
-	// aplica su respectivo descuento 
+	
 	/**
 	 * Metodo que aplica el descuento correspondiente a un articulo elegido,
-         * en caso de haber una oferta en el departamento donde pertenece.
+     * en caso de haber una oferta en el departamento donde pertenece.
 	 */
 	private void alimentoConDescuento(Articulo a){ 
-		
 		Articulo articulo;
-		
 		switch(oferta){
-			case 0: //Los alimentos no tienen descuento
+			case 0: 
 				tienda.agregarAlCarrito(a);
 				break;
-			case 1:  //Los alimentos tienen 10% descuento
+			case 1:  
 				articulo = new DescuentoDiez(a); 
 				tienda.agregarAlCarrito(articulo);
 				break;
-			case 2:  //Los alimentos tienen 20% descuento
+			case 2:  
 				articulo = new DescuentoVeinte(a); 
 				tienda.agregarAlCarrito(articulo);
 				break;
-			case 3:  //Los alimentos tienen 30% descuento
+			case 3: 
 				articulo = new DescuentoTreinta(a); 
 				tienda.agregarAlCarrito(articulo);
 				break;
@@ -226,27 +212,47 @@ public class Mexico implements ModoIdioma{
 	/**
 	 * Metodo que lleva a cabo el proceso de compra segura, y asi generar el ticket del cliente.
 	 */
-	public void ticket(){ //aqui sucede la compra segura y se genera el ticket **falta probar
+	public void ticket(){ 	
 		if(tienda.puedeGenerarTicket()){
+		boolean continuar=true;
+		boolean cuentaExitosa=false; 
+		int contador =0;
 			System.out.println("");
 			System.out.println("---------- C O M P R A    S E G U R A ----------- ");
 			System.out.println("");
 			System.out.println("Su lista de compras se muestra a continuacion: ");
 			System.out.println("");
 			tienda.listaCompras();
-			System.out.print("Ingrese su numero de cuenta para completar la transaccion: ");
+			
+			do{
+			System.out.print("\n"+"Ingrese su numero de cuenta para completar la transaccion: ");
 			String cuentaUsuario = sc.nextLine();
 				try{
+					contador++;
 					tienda.compraSegura(cuentaUsuario);
+					cuentaExitosa=true;
+					continuar=false;
 				}catch(IllegalArgumentException e){
-					System.out.println("	El numero de cuenta ingresado es incorrecto o.O");
+					System.out.println("\n	El numero de cuenta ingresado es incorrecto o.O");
+					if(contador>2){
+						System.out.println("\n		¡Ha excedido el número de intentos!");
+						System.out.println("	Por seguridad, tendremos que cerrar su sesión");
+						continuar=false;
+					}
 				}catch(SaldoInsuficienteException ex){
-					System.out.println("	Su saldo es insuficiente");
+					System.out.println("\n		Su saldo es insuficiente");
 					System.out.println("	Tendremos que cancelar su compra :(");
+					continuar=false;
 				}
-		
+			}while(continuar);
+			
+			
+			if(cuentaExitosa){
+				System.out.println("\n		¡Su compra se ha realizado con éxito!");
+				System.out.println("Sus productos se entregarán en " + tienda.lugarDeEntrega()+ " dentro de 5 días hábiles");
+			}
+			
 		}
-		
 		tienda.generarTicket(false);
 	}
 }
