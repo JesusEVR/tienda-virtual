@@ -1,3 +1,4 @@
+import java.util.Iterator;
 /**
  * Clase que define las carateristicas de una Tienda Virtual.
  *
@@ -139,24 +140,45 @@ public class TiendaVirtual{
 	 * Metodo que permite al usuario ver el catalogo de electronica.
 	 */
 	public void catalogoElectronica(){
+		Catalogo catalogoElectronica = new CatalogoElectronica();
+		Iterator iteradorElectronica = catalogoElectronica.creaIterador();
+
 		System.out.println("***** CATALOGO ELECTRONICA *******");
 		System.out.println("");
+		while(iteradorElectronica.hasNext()){
+			System.out.println(iteradorElectronica.next());
+		}
+		System.out.println();
 	}
 
 	/**
 	 * Metodo que permite al usuario ver el catalogo de electrodomesticos.
 	 */
 	public void catalogoElectrodomesticos(){
+		Catalogo catalogoElectrodomestico = new CatalogoElectrodomestico();
+		Iterator iteradorElectrodomesticos = catalogoElectrodomestico.creaIterador();
+		
 		System.out.println("***** CATALOGO ELECTRODOMESTICOS *******");
 		System.out.println("");
+		while(iteradorElectrodomesticos.hasNext()){
+			System.out.println(iteradorElectrodomesticos.next());
+		}
+		System.out.println();
 	}
 	
 	/**
 	 * Metodo que permite al usuario ver el catalogo de alimentos.
 	 */
 	public void catalogoAlimentos(){
+		Catalogo catalogoAlimento = new CatalogoAlimento();
+		Iterator iteradorAlimentos = catalogoAlimento.creaIterador();
+
 		System.out.println("***** CATALOGO ALIMENTOS *******");
 		System.out.println("");
+		while(iteradorAlimentos.hasNext()){
+			System.out.println(iteradorAlimentos.next());
+		}
+		System.out.println();
 	}
 
 	/**
@@ -168,15 +190,14 @@ public class TiendaVirtual{
 	public Articulo buscarAlimento(String codigoBarras){
 		System.out.println("Buscando el articulo en el catalogo de alimentos..");
 		
-		/*
-		Catalogo catalogoAlimento = new CatalogoAlimento();
+		Catalogo catalogoAlimentos = new CatalogoAlimento();
 		Iterador iteradorAlimentos =  catalogoAlimentos.creaIterador();
 		Articulo articulo;
 		
 		while(iteradorAlimentos.hasNext()){
 			articulo = iteradorAlimentos.next();
 				if(codigoBarras.equals(articulo.codigoBarras())) return articulo;
-		}*/	
+		}
 		
 		
 		return null;
