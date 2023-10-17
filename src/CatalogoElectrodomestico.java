@@ -11,31 +11,29 @@ import java.util.Iterator;
 */
 public class CatalogoElectrodomestico implements Catalogo{
 	
-	protected LinkedList<Articulo> listaElectrodomesticos;
+	protected LinkedList<Object> listaElectrodomesticos;
 
 	/**
 	* Constructor por omisión que inicializa el catálogo 
 	*/
 	public CatalogoElectrodomestico(){
-		listaElectrodomesticos = new LinkedList<Articulo>();
-		Articulo a1 = new Aspiradora();
-		agregarArticulo(a1);
-		Articulo a2 = new Refrigerador();
-		agregarArticulo(a2);
+		listaElectrodomesticos = new LinkedList<>();
+		Articulo a1 = new Lavadora();
+		agregarArticulo((Object)a1);
+		Articulo a2 = new Microondas();
+		agregarArticulo((Object)a2);
 		Articulo a3 = new Ventilador();
-		agregarArticulo(a3);
-		Articulo a4 = new Microondas();
-		agregarArticulo(a4);
-		Articulo a5 = new Lavadora();
-		agregarArticulo(a5);
-		Articulo a6 = new Television();
-		agregarArticulo(a6);
+		agregarArticulo((Object)a3);
+		Articulo a4 = new Refrigerador();
+		agregarArticulo((Object)a4);
+		Articulo a5 = new Aspiradora();
+		agregarArticulo((Object)a5);
 	}
 
 	/**
 	 * Método que agrega un artículo a la lista
 	 */
-	public void agregarArticulo(Articulo a){
+	public void agregarArticulo(Object a){
 		listaElectrodomesticos.add(a);
 	}
 

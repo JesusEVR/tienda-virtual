@@ -143,22 +143,22 @@ public class EEUU implements ModoIdioma{
 						if(codigoBarras.length()==5){ //el codigo tiene 5 caracteres
 							
 							if(codigoBarras.toUpperCase().contains("AL")){ //pertenece al depto de alimentos
-								System.out.println("Codigo correcto");
-								//articulo = tienda.buscarAlimento(codigoBarras);
-								//if(articulo == null) System.out.println("\n		Invalid barcode \n");
-								//tienda.agregarAlCarrito(articulo);
+								//System.out.println("Codigo correcto");
+								articulo = tienda.buscarAlimento(codigoBarras.toUpperCase());
+								if(articulo == null) System.out.println("\n		Invalid barcode \n");
+								tienda.agregarAlCarrito(articulo);
 								
 							}else if(codigoBarras.toUpperCase().contains("ET")){ //pertenece al depto de electronica
-								System.out.println("Codigo correcto");
-								//articulo = tienda.buscarElectronico(codigoBarras);
-								//if(articulo == null) System.out.println("\n		Invalid barcode \n");
-								//this.electronicoConDescuento(articulo);
+								//System.out.println("Codigo correcto");
+								articulo = tienda.buscarElectronico(codigoBarras.toUpperCase());
+								if(articulo == null) System.out.println("\n		Invalid barcode \n");
+								this.electronicoConDescuento(articulo);
 								
 							}else if(codigoBarras.toUpperCase().contains("ED")){ //pertenece al depto de electrodomesticos
-								System.out.println("Codigo correcto");
-								//articulo = tienda.buscarElectrodomestico(codigoBarras);
-								//if(articulo == null) System.out.println("\n		Invalid barcode \n");
-								//tienda.agregarAlCarrito(articulo);
+								//System.out.println("Codigo correcto");
+								articulo = tienda.buscarElectrodomestico(codigoBarras.toUpperCase());
+								if(articulo == null) System.out.println("\n		Invalid barcode \n");
+								tienda.agregarAlCarrito(articulo);
 								
 								
 							}else{ System.out.println("\n		Invalid barcode \n");}
@@ -232,8 +232,8 @@ public class EEUU implements ModoIdioma{
 			System.out.println("");
 			System.out.println("Your shopping list is shown below: ");
 			System.out.println("");
-			//tienda.listaCompras();
-			System.out.println("Write your bank account to pay: ");
+			tienda.listaCompras();
+			System.out.print("Write your bank account to pay: ");
 			String cuentaUsuario = sc.nextLine();
 				try{
 					tienda.compraSegura(cuentaUsuario);

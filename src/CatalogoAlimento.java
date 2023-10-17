@@ -11,33 +11,33 @@ import java.util.Iterator;
 */
 public class CatalogoAlimento implements Catalogo{
 	
-	protected LinkedList<Articulo> listaAlimento;
+	protected LinkedList<Object> listaAlimento;
 
 	/**
 	* Constructor por omisión que inicializa el catálogo 
 	*/
 	public CatalogoAlimento(){
-		listaAlimento = new LinkedList<Articulo>();
+		listaAlimento = new LinkedList<>();
 		Articulo a1 = new Pan();
-		agregarArticulo(a1);
+		agregarArticulo((Object) a1);
 		Articulo a2 = new Cereal();
-		agregarArticulo(a2);
+		agregarArticulo((Object)a2);
 		Articulo a3 = new CajaDeGalletas();
-		agregarArticulo(a3);
+		agregarArticulo((Object)a3);
 		Articulo a4 = new Queso();
-		agregarArticulo(a4);
+		agregarArticulo((Object)a4);
 		Articulo a5 = new Gelatina();
-		agregarArticulo(a5);
+		agregarArticulo((Object)a5);
 		Articulo a6 = new Arroz();
-		agregarArticulo(a6);
+		agregarArticulo((Object)a6);
 		Articulo a7 = new Helado();
-		agregarArticulo(a7);
+		agregarArticulo((Object)a7);
 	}
 
 	/**
 	 * Método que agrega un artículo a la lista
 	 */
-	public void agregarArticulo(Articulo a){
+	public void agregarArticulo(Object a){
 		listaAlimento.add(a);
 	}
 

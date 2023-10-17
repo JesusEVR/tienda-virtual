@@ -143,22 +143,22 @@ public class Espania implements ModoIdioma{
 						if(codigoBarras.length()==5){ //el codigo tiene 5 caracteres
 							
 							if(codigoBarras.toUpperCase().contains("AL")){ //pertenece al depto de alimentos
-								System.out.println("Codigo correcto");
-								//articulo = tienda.buscarAlimento(codigoBarras);
-								//if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
-								//tienda.agregarAlCarrito(articulo);
+								//System.out.println("Codigo correcto");
+								articulo = tienda.buscarAlimento(codigoBarras.toUpperCase());
+								if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								tienda.agregarAlCarrito(articulo);
 								
 							}else if(codigoBarras.toUpperCase().contains("ET")){ //pertenece al depto de electronica
-								System.out.println("Codigo correcto");
-								//articulo = tienda.buscarElectronico(codigoBarras);
-								//if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
-								//tienda.agregarAlCarrito(articulo);
+								//System.out.println("Codigo correcto");
+								articulo = tienda.buscarElectronico(codigoBarras.toUpperCase());
+								if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								tienda.agregarAlCarrito(articulo);
 								
 							}else if(codigoBarras.toUpperCase().contains("ED")){ //pertenece al depto de electrodomesticos
-								System.out.println("Codigo correcto");
-								//articulo = tienda.buscarElectrodomestico(codigoBarras);
-								//if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
-								//this.electrodomesticoConDescuento(articulo);
+								//System.out.println("Codigo correcto");
+								articulo = tienda.buscarElectrodomestico(codigoBarras.toUpperCase());
+								if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								this.electrodomesticoConDescuento(articulo);
 								
 								
 							}else{ System.out.println("\n		Codigo de barras invalido \n");}
@@ -232,8 +232,8 @@ public class Espania implements ModoIdioma{
 			System.out.println("");
 			System.out.println("Su lista de compras se muestra a continuacion: ");
 			System.out.println("");
-			//tienda.listaCompras();
-			System.out.println("Ingrese su numero de cuenta para completar la transaccion: ");
+			tienda.listaCompras();
+			System.out.print("Ingrese su numero de cuenta para completar la transaccion: ");
 			String cuentaUsuario = sc.nextLine();
 				try{
 					tienda.compraSegura(cuentaUsuario);

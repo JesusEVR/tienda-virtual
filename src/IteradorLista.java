@@ -11,7 +11,7 @@ import java.util.Iterator;
  */
 
 public class IteradorLista implements Iterator{
-	public LinkedList<Articulo> lista;
+	public LinkedList<Object> lista;
 
 	Iterator it;
 
@@ -20,7 +20,7 @@ public class IteradorLista implements Iterator{
      * 
      * @param lista Lista de artículos del catálogo
      */
-	public IteradorLista(LinkedList<Articulo> lista){
+	public IteradorLista(LinkedList<Object> lista){
 		this.lista = lista;
 		it = lista.iterator();
 	}

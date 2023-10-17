@@ -146,7 +146,8 @@ public class TiendaVirtual{
 		System.out.println("***** CATALOGO ELECTRONICA *******");
 		System.out.println("");
 		while(iteradorElectronica.hasNext()){
-			System.out.println(iteradorElectronica.next());
+			Articulo a = (Articulo) iteradorElectronica.next();
+			System.out.println(a.informacion());
 		}
 		System.out.println();
 	}
@@ -161,7 +162,8 @@ public class TiendaVirtual{
 		System.out.println("***** CATALOGO ELECTRODOMESTICOS *******");
 		System.out.println("");
 		while(iteradorElectrodomesticos.hasNext()){
-			System.out.println(iteradorElectrodomesticos.next());
+			Articulo a = (Articulo) iteradorElectrodomesticos.next();
+			System.out.println(a.informacion());
 		}
 		System.out.println();
 	}
@@ -176,7 +178,8 @@ public class TiendaVirtual{
 		System.out.println("***** CATALOGO ALIMENTOS *******");
 		System.out.println("");
 		while(iteradorAlimentos.hasNext()){
-			System.out.println(iteradorAlimentos.next());
+			Articulo a = (Articulo) iteradorAlimentos.next();
+			System.out.println(a.informacion());
 		}
 		System.out.println();
 	}
@@ -188,15 +191,15 @@ public class TiendaVirtual{
 	 * @return articulo El articulo correspondiente al codigo ingresado
 	 */
 	public Articulo buscarAlimento(String codigoBarras){
-		System.out.println("Buscando el articulo en el catalogo de alimentos..");
-		
 		Catalogo catalogoAlimentos = new CatalogoAlimento();
-		Iterador iteradorAlimentos =  catalogoAlimentos.creaIterador();
+		Iterator iteradorAlimentos =  catalogoAlimentos.creaIterador();
 		Articulo articulo;
 		
 		while(iteradorAlimentos.hasNext()){
-			articulo = iteradorAlimentos.next();
-				if(codigoBarras.equals(articulo.codigoBarras())) return articulo;
+			articulo = (Articulo) iteradorAlimentos.next();
+				if(codigoBarras.equals(articulo.codigoBarras())){
+					return articulo;
+				}
 		}
 		
 		
@@ -210,7 +213,17 @@ public class TiendaVirtual{
 	 * @return articulo El articulo correspondiente al codigo ingresado
 	 */
 	public Articulo buscarElectrodomestico(String codigoBarras){
-		System.out.println("Buscando el articulo en el catalogo de electrodomesticos...");
+		Catalogo catalogoElectrodomestico = new CatalogoElectrodomestico();
+		Iterator iteradorElectrodomestico =  catalogoElectrodomestico.creaIterador();
+		Articulo articulo;
+		
+		while(iteradorElectrodomestico.hasNext()){
+			articulo = (Articulo) iteradorElectrodomestico.next();
+				if(codigoBarras.equals(articulo.codigoBarras())){
+					return articulo;
+				}
+		}
+		
 		return null;
 	}
 
@@ -221,7 +234,16 @@ public class TiendaVirtual{
 	 * @return articulo El articulo correspondiente al codigo ingresado
 	 */
 	public Articulo buscarElectronico(String codigoBarras){
-		System.out.println("Buscando el articulo en el catalogo de electronica...");
+		Catalogo catalogoElectronica = new CatalogoElectronica();
+		Iterator iteradorElectronica =  catalogoElectronica.creaIterador();
+		Articulo articulo;
+		
+		while(iteradorElectronica.hasNext()){
+			articulo = (Articulo) iteradorElectronica.next();
+				if(codigoBarras.equals(articulo.codigoBarras())){
+					return articulo;
+				}
+		}
 		return null;
 	}
 

@@ -11,27 +11,29 @@ import java.util.Iterator;
 */
 public class CatalogoElectronica implements Catalogo{
 	
-	protected LinkedList<Articulo> listaElectronica;
+	protected LinkedList<Object> listaElectronica;
 
 	/**
 	* Constructor por omisión que inicializa el catálogo 
 	*/
 	public CatalogoElectronica(){
-		listaElectronica = new LinkedList<Articulo>();
-		Articulo a1 = new Laptop();
-		agregarArticulo(a1);
-		Articulo a2 = new Celular();
-		agregarArticulo(a2);
+		listaElectronica = new LinkedList<>();
+		Articulo a1 = new Television();
+		agregarArticulo((Object)a1);
+		Articulo a2 = new Laptop();
+		agregarArticulo((Object)a2);
 		Articulo a3 = new Consola();
-		agregarArticulo(a3);
+		agregarArticulo((Object)a3);
 		Articulo a4 = new Impresora();
-		agregarArticulo(a4);
+		agregarArticulo((Object)a4);
+		Articulo a5 = new Celular();
+		agregarArticulo((Object)a5);
 	}
 
 	/**
 	 * Método que agrega un artículo a la lista
 	 */
-	public void agregarArticulo(Articulo a){
+	public void agregarArticulo(Object a){
 		listaElectronica.add(a);
 	}
 
