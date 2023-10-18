@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class EEUU implements ModoIdioma{
 	/**
-	 * Objeto tienda virtual que adaptara el idioma español latino.
+	 * Objeto tienda virtual que adaptara el idioma ingles.
 	 */
 	TiendaVirtual tienda;
 	/**
@@ -32,7 +32,7 @@ public class EEUU implements ModoIdioma{
 	/**
 	 * Constructor por paramatros.
          *
-         * @param t La tienda virtual que adopta el idioma español latinoamericano.
+         * @param t La tienda virtual que adopta el idioma ingles.
 	 */
 	public EEUU(TiendaVirtual t){
 		tienda = t;
@@ -55,7 +55,7 @@ public class EEUU implements ModoIdioma{
 	}
 
 	/**
-	 * Metodo que despliega todo el proceso principal de la tienda CheemsMart, en idioma español (latinoamericano).
+	 * Metodo que despliega todo el proceso principal de la tienda CheemsMart, en idioma ingles.
 	 */
 	public void entrarTienda(){
 		int opcion = 0;
@@ -67,17 +67,17 @@ public class EEUU implements ModoIdioma{
 			System.out.println("		2. Buy");
 			System.out.println("		0. Exit");
 			System.out.println("");
-			System.out.print("Select the opcion u want to execute: ");
+			System.out.print("Select the option u want to execute: ");
 			while(true){
 					try {
 						String opcionUsuario = sc.nextLine();
 						opcion =  Integer.parseInt(opcionUsuario);
 						if(opcion >-1 && opcion < 3){ 
 							break;
-						}else{ System.out.print("		Please, select a valid opcion: ");
+						}else{ System.out.print("		Please, select a valid option: ");
 						}
 					}catch (NumberFormatException ex){
-						System.out.print("		Please, select a valid opcion: ");
+						System.out.print("		Please, select a valid option: ");
 					}
 			}
 
@@ -116,17 +116,17 @@ public class EEUU implements ModoIdioma{
 		System.out.println("		1. Add to cart");
 		System.out.println("		2. Chekout");
 		System.out.println("		0. Exit");	
-		System.out.print("Select the opcion u want to execute: ");
+		System.out.print("Select the option u want to execute: ");
 			while(true){
 					try {
 						String opcionUsuario = sc.nextLine();
 						opcion =  Integer.parseInt(opcionUsuario);
 						if(opcion >-1 && opcion < 3){ 
 							break;
-						}else{ System.out.print("		Please, select a valid opcion: ");
+						}else{ System.out.print("		Please, select a valid option: ");
 						}
 					}catch (NumberFormatException ex){
-						System.out.print("		Please, select a valid opcion: ");
+						System.out.print("		Please, select a valid option: ");
 					}
 			}
 
@@ -170,7 +170,7 @@ public class EEUU implements ModoIdioma{
 
 	/**
 	 * Metodo que aplica el descuento correspondiente a un articulo elegido,
-     * en caso de haber una oferta en el departamento donde pertenece.
+         * en caso de haber una oferta en el departamento donde pertenece.
 	 */
 	private void electronicoConDescuento(Articulo a){ 
 		Articulo articulo;
@@ -248,7 +248,7 @@ public class EEUU implements ModoIdioma{
 			}while(continuar);
 			
 			if(cuentaExitosa){
-				System.out.println("		¡Your purchase was successfully completed!");
+				System.out.println("		Your purchase was successfully completed!");
 				System.out.println("Your products will be delivered at " + tienda.lugarDeEntrega()+ " within 5 working days");
 			}
 		}
