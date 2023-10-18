@@ -1,4 +1,13 @@
 import java.util.Scanner;
+
+/**
+ * Clase principal de la Tienda virtual CheemsMart.
+ *
+ * @author paolasanv
+ * @author Supr-Lilito
+ * @author JesusEVR
+ * @version octubre 2023
+ */
 public class TiendaCheemsMart{
 	
 	public static void main(String[] args){
