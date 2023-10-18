@@ -7,7 +7,7 @@ import java.util.Iterator;
  * @author paolasanv
  * @author Supr-Lilito
  * @author JesusEVR
- *
+ * @version octubre 2023
  */
 public class CatalogoAlimento implements Catalogo{
 	protected LinkedList<Object> listaAlimento;
