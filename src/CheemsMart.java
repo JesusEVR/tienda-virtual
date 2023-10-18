@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class CheemsMart{
 	/**
-	 * Lista de usuarios que de la tienda virtual.
+	 * Lista de usuarios de la tienda virtual.
 	 */
 	private LinkedList<CuentaCheemsMart> listaUsuarios = new LinkedList<>();
 	/**
