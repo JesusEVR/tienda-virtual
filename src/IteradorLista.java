@@ -16,10 +16,10 @@ public class IteradorLista implements Iterator{
 	Iterator it;
 
 	/**
-     * Constructor de la clase IteradorLista.
-     * 
-     * @param lista Lista de artículos del catálogo
-     */
+         * Constructor de la clase IteradorLista.
+         * 
+         * @param lista Lista de artículos del catálogo
+         */
 	public IteradorLista(LinkedList<Object> lista){
 		this.lista = lista;
 		it = lista.iterator();
