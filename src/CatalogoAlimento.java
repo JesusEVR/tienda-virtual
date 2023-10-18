@@ -2,20 +2,19 @@ import java.util.LinkedList;
 import java.util.Iterator;
 
 /**
-* Clase que define la característica del catálogo Electrodoméstico
-*
-*@author paolasanv
-*@author Supr-Lilito
-*@author JesusEVR
-*
-*/
+ * Clase que define la característica del catálogo Electrodoméstico
+ *
+ * @author paolasanv
+ * @author Supr-Lilito
+ * @author JesusEVR
+ *
+ */
 public class CatalogoAlimento implements Catalogo{
-	
 	protected LinkedList<Object> listaAlimento;
 
 	/**
-	* Constructor por omisión que inicializa el catálogo 
-	*/
+	 * Constructor por omisión que inicializa el catálogo 
+	 */
 	public CatalogoAlimento(){
 		listaAlimento = new LinkedList<>();
 		Articulo a1 = new Pan();
@@ -42,13 +41,12 @@ public class CatalogoAlimento implements Catalogo{
 	}
 
 	/**
-	* Metodo que crea un iterador para recorrer los elementos del catálogo
-	*
-	* @return iterador
-	*/
+	 * Metodo que crea un iterador para recorrer los elementos del catálogo
+	 *
+	 * @return iterador
+	 */
 	public Iterator creaIterador(){
 		return new IteradorLista(listaAlimento);
 	}
-
 
 }
