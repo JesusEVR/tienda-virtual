@@ -1,3 +1,3 @@
-- Marcar diferencia entre el español latino y español castellano
-- Documentar CheemsMart
+- Modificar los mensajes de la clase España, agregando modismos y esa wea
+- Borrar prueba.java (creo)
 
