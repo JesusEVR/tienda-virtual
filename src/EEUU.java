@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 /**
- * Clase que define el estado de la tienda cuando el usuario es de nacionalidad mexicana.
+ * Clase que define el estado de la tienda cuando el usuario es de nacionalidad estadounidense.
  *
  * @author paolasanv
  * @author Supr-Lilito
