@@ -6,7 +6,7 @@ import java.util.Iterator;
  * @author Supr-Lilito
  * @author paolasanv
  * @author JesusEVR
- * @version septiembre 2023
+ * @version octubre 2023
  *
  */
 
