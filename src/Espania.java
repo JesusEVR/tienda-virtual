@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 /**
- * Clase que define el estado de la tienda cuando el usuario es de nacionalidad mexicana.
+ * Clase que define el estado de la tienda cuando el usuario es de nacionalidad española.
  *
  * @author paolasanv
  * @author Supr-Lilito
@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class Espania implements ModoIdioma{
 	/**
-	 * Objeto tienda virtual que adaptara el idioma español latino.
+	 * Objeto tienda virtual que adaptara el idioma español castellano.
 	 */
 	TiendaVirtual tienda;
 	/**
@@ -32,7 +32,7 @@ public class Espania implements ModoIdioma{
 	/**
 	 * Constructor por paramatros.
      *
-     * @param t La tienda virtual que adopta el idioma español latinoamericano.
+     * @param t La tienda virtual que adopta el idioma español castellano.
 	 */
 	public Espania(TiendaVirtual t){
 		tienda = t;
@@ -55,7 +55,7 @@ public class Espania implements ModoIdioma{
 	}
 
 	/**
-	 * Metodo que despliega todo el proceso principal de la tienda CheemsMart, en idioma español (latinoamericano).
+	 * Metodo que despliega todo el proceso principal de la tienda CheemsMart, en idioma español (castellano).
 	 */
 	public void entrarTienda(){
 		int opcion = 0;
@@ -172,7 +172,7 @@ public class Espania implements ModoIdioma{
 
 	/**
 	 * Metodo que aplica el descuento correspondiente a un articulo elegido,
-     * en caso de haber una oferta en el departamento donde pertenece.
+         * en caso de haber una oferta en el departamento donde pertenece.
 	 */
 	private void electrodomesticoConDescuento(Articulo a){ 
 		Articulo articulo;
