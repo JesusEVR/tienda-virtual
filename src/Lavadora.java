@@ -28,7 +28,7 @@ public class Lavadora implements Articulo{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Código: " +codigoBarras()+ " - Artículo: Lavadora con secado express integrado"+"\n"+ "   Precio: $" +precio() +" MXN";
+		return "Código: " +codigoBarras()+ " - Artículo: Lavadora con secado express integrado"+"\n"+ "        Precio: $" +precio() +" MXN";
 	}
 
 	/**
