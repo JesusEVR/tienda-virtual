@@ -28,7 +28,7 @@ public class Helado implements Articulo{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Código: " +codigoBarras()+ " - Artículo: Helado Chocosabroso (1.5 L)"+"\n"+ "   Precio: $" +precio() + " MXN";
+		return "Código: " +codigoBarras()+ " - Artículo: Helado Chocosabroso (1.5 L)"+"\n"+ "        Precio: $" +precio() + " MXN";
 	}
 
 	/**
