@@ -28,7 +28,7 @@ public class Microondas implements Articulo{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Código: " +codigoBarras()+ " Artículo: Microondas Premium con calentador veloz"+"\n"+ "	Precio: $" +precio() +" MXN";
+		return "Código: " +codigoBarras()+ " - Artículo: Microondas Premium con calentador veloz"+"\n"+ "   Precio: $" +precio() +" MXN";
 	}
 
 	/**
