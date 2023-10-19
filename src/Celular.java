@@ -28,7 +28,7 @@ public class Celular implements Articulo{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Código: " +codigoBarras()+ " Artículo: Celular AyFound 18, 252 GB de almacenamiento y 3 horas de bateria"+"\n"+ "	Precio: $" +precio() +" MXN";
+		return "Código: " +codigoBarras()+ " - Artículo: Celular AyFound 18, 252 GB de almacenamiento y 3 horas de bateria"+"\n"+ "	Precio: $" +precio() +" MXN";
 	}
 
 	/**
