@@ -28,7 +28,7 @@ public class Laptop implements Articulo{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Código: " +codigoBarras()+ " Artículo: Laptop Gaming Terobo 3i 6ta"+"\n"+ "	Precio: $" +precio() +" MXN";
+		return "Código: " +codigoBarras()+ " - Artículo: Laptop Gaming Terobo 3i 6ta"+"\n"+ "   Precio: $" +precio() +" MXN";
 	}
 
 	/**
