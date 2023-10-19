@@ -28,7 +28,7 @@ public class Impresora implements Articulo{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Código: " +codigoBarras()+ " Artículo: Impresora laser PH con 3 cartuchos extra"+"\n"+ "	Precio: $" +precio() +" MXN";
+		return "Código: " +codigoBarras()+ " - Artículo: Impresora laser PH con 3 cartuchos extra"+"\n"+ "   Precio: $" +precio() +" MXN";
 	}
 
 	/**
