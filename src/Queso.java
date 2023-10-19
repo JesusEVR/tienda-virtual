@@ -28,7 +28,7 @@ public class Queso implements Articulo{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Código: " +codigoBarras()+ " Artículo: Queso Panela de los Volcanes (700 gramos)"+"\n"+ "	Precio: $" +precio() + " MXN";
+		return "Código: " +codigoBarras()+ " - Artículo: Queso Panela de los Volcanes (700 gramos)"+"\n"+ "   Precio: $" +precio() + " MXN";
 	}
 
 	/**
