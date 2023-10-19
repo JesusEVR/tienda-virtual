@@ -28,7 +28,7 @@ public class Arroz implements Articulo{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Código: " +codigoBarras()+ " Artículo: Paquete de Arroz SoS (1 kg)"+"\n"+ "	Precio: $" +precio() + " MXN";
+		return "Código: " +codigoBarras()+ " - Artículo: Paquete de Arroz SoS (1 kg)"+"\n"+ "	Precio: $" +precio() + " MXN";
 	}
 
 	/**
