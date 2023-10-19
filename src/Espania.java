@@ -142,18 +142,18 @@ public class Espania implements ModoIdioma{
 					
 						if(codigoBarras.length()==5){ 
 							
-							if(codigoBarras.toUpperCase().contains("AL")){ //pertenece al depto de alimentos
+							if(codigoBarras.toUpperCase().contains("AL")){
 								
 								articulo = tienda.buscarAlimento(codigoBarras.toUpperCase());
 								if(articulo == null) System.out.println("\n		El codigo de barras no es valido \n");
 								tienda.agregarAlCarrito(articulo);
 								
-							}else if(codigoBarras.toUpperCase().contains("ET")){ //pertenece al depto de electronica
+							}else if(codigoBarras.toUpperCase().contains("ET")){ 
 								articulo = tienda.buscarElectronico(codigoBarras.toUpperCase());
 								if(articulo == null) System.out.println("\n		El codigo de barras no es valido \n");
 								tienda.agregarAlCarrito(articulo);
 								
-							}else if(codigoBarras.toUpperCase().contains("ED")){ //pertenece al depto de electrodomesticos
+							}else if(codigoBarras.toUpperCase().contains("ED")){
 								articulo = tienda.buscarElectrodomestico(codigoBarras.toUpperCase());
 								if(articulo == null) System.out.println("\n		El codigo de barras no es valido \n");
 								this.electrodomesticoConDescuento(articulo);
