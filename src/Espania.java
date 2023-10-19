@@ -238,20 +238,20 @@ public class Espania implements ModoIdioma{
 				}catch(IllegalArgumentException e){
 					System.out.println("\n	El numero de cuenta ingresado no es correcto.");
 					if(contador>2){
-						System.out.println("\n		¡Me cago en la leche! Parece que ha excedido el numero de intentos");
-						System.out.println("	Se cerrara la sesion para evitar problemas. Enviaremos a la interpol por usted");
+						System.out.println("\n		¡Me recargo en la leche! Parece que ha excedido el numero de intentos");
+						System.out.println("	Ceerramos su sesion para evitar problemas. Enviaremos a la interpol por usted");
 						continuar=false;
 					}
 				}catch(SaldoInsuficienteException ex){
 					System.out.println("\n		Esta sin blanca, tio. Tu saldo no es suficiente");
-					System.out.println("	Se ha pasado tres pueblos sin duda. Se cancelara su compra");
+					System.out.println("	Se ha pasado tres pueblos sin duda. La compra ha sido cancelada");
 					continuar=false;
 				}
 			}while(continuar);
 			
 			if(cuentaExitosa){
 				System.out.println("		¡La compra se ha completado de manera satisfactoria!");
-				System.out.println("Los articulos seran enviados a su domicilio en " + tienda.lugarDeEntrega()+ " dentro de 7 días hábiles");
+				System.out.println("Los articulos seran enviados a su domicilio en " + tienda.lugarDeEntrega()+ " dentro de 7 dias habiles");
 			}
 		}
 		tienda.generarTicket(false);
