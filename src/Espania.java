@@ -42,7 +42,7 @@ public class Espania implements ModoIdioma{
 	 * Metodo que saluda al usuario cuando se inicia la ejecucion.
 	 */
 	public void saludar(){
-		System.out.println("	¡Bienvenido a la tienda CheemsMart! (España)");
+		System.out.println("	¡Bienvenido a la tienda CheemsMart, chavelete!");
 		System.out.println("");
 	}
 
@@ -51,7 +51,7 @@ public class Espania implements ModoIdioma{
 	 */
 	public void despedir(){
 		System.out.println("");
-		System.out.println("	¡Gracias por tu preferencia, regresa pronto! (España)");
+		System.out.println("	¡Se agradece su preferencia, tio!");
 	}
 
 	/**
@@ -63,8 +63,8 @@ public class Espania implements ModoIdioma{
 		
 		do{
 			System.out.println("");
-			System.out.println("		1. Ver catalogo");
-			System.out.println("		2. Comprar");
+			System.out.println("		1. Mostrar catalogo");
+			System.out.println("		2. Quiero adquirir algo, chaval");
 			System.out.println("		0. Salir");
 			System.out.println("");
 			System.out.print("Seleccione la opcion que desee ejecutar: ");
@@ -74,10 +74,10 @@ public class Espania implements ModoIdioma{
 						opcion =  Integer.parseInt(opcionUsuario);
 						if(opcion >-1 && opcion < 3){ 
 							break;
-						}else{ System.out.print("		Por favor, elige una opcion valida: ");
+						}else{ System.out.print("		Flipo en colores con usted. Por favor, elija una opcion valida: ");
 						}
 					}catch (NumberFormatException ex){
-						System.out.print("		Por favor, elige una opcion valida: ");
+						System.out.print("		Flipo en colores con usted. Por favor, elija una opcion valida: ");
 					}
 			}
 
@@ -93,7 +93,7 @@ public class Espania implements ModoIdioma{
 					break;
 				case 2:
 					System.out.println("");
-					System.out.println("---------- R E A L I Z A R     C O M P R A  ----------- ");
+					System.out.println("---------- R E A L I Z A R      A D Q U I S I O N ----------- ");
 					tienda.verCatalogo();
 					comprar();
 					seguir = false; 
@@ -113,8 +113,8 @@ public class Espania implements ModoIdioma{
 		
 		do{
 		System.out.println("");
-		System.out.println("		1. Agregar al carrito");
-		System.out.println("		2. Terminar compra");
+		System.out.println("		1. Agregar al vehiculo de compra, chaval");
+		System.out.println("		2. Finalizar compra");
 		System.out.println("		0. Salir");	
 		System.out.print("Seleccione la opcion que desee ejecutar: ");
 			while(true){
@@ -123,10 +123,10 @@ public class Espania implements ModoIdioma{
 						opcion =  Integer.parseInt(opcionUsuario);
 						if(opcion >-1 && opcion < 3){ 
 							break;
-						}else{ System.out.print("		Por favor, elige una opcion valida: ");
+						}else{ System.out.print("		Deje de liarla parda. Por favor, elija una opcion valida: ");
 						}
 					}catch (NumberFormatException ex){
-						System.out.print("		Por favor, elige una opcion valida: ");
+						System.out.print("		Deje de liarla parda. Por favor, elija una opcion valida: ");
 					}
 			}
 
@@ -136,7 +136,7 @@ public class Espania implements ModoIdioma{
 					seguir = false;
 					break;
 				case 1:
-					System.out.print("\n"+"Escribe el codigo de barras del articulo: ");
+					System.out.print("\n"+"Introduce el codigo de barras del articulo que deseas adquirir, chavalete: ");
 					
 						codigoBarras = sc.nextLine();
 					
@@ -145,20 +145,20 @@ public class Espania implements ModoIdioma{
 							if(codigoBarras.toUpperCase().contains("AL")){ //pertenece al depto de alimentos
 								
 								articulo = tienda.buscarAlimento(codigoBarras.toUpperCase());
-								if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								if(articulo == null) System.out.println("\n		El codigo de barras no es valido \n");
 								tienda.agregarAlCarrito(articulo);
 								
 							}else if(codigoBarras.toUpperCase().contains("ET")){ //pertenece al depto de electronica
 								articulo = tienda.buscarElectronico(codigoBarras.toUpperCase());
-								if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								if(articulo == null) System.out.println("\n		El codigo de barras no es valido \n");
 								tienda.agregarAlCarrito(articulo);
 								
 							}else if(codigoBarras.toUpperCase().contains("ED")){ //pertenece al depto de electrodomesticos
 								articulo = tienda.buscarElectrodomestico(codigoBarras.toUpperCase());
-								if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								if(articulo == null) System.out.println("\n		El codigo de barras no es valido \n");
 								this.electrodomesticoConDescuento(articulo);
-							}else{ System.out.println("\n		Codigo de barras invalido \n");}
-						} else{ System.out.println("\n		Codigo de barras invalido \n");}
+							}else{ System.out.println("\n		El codigo de barras no es valido \n");}
+						} else{ System.out.println("\n		El codigo de barras no es valido \n");}
 					seguir = true;
 					break;
 				case 2:
@@ -202,13 +202,13 @@ public class Espania implements ModoIdioma{
 		oferta = random.nextInt(4);
 		switch(oferta){
 			case 1:
-				System.out.println("¡El dia de hoy contamos con 10% de descuento en el departamento de electrodomesticos!");
+				System.out.println("¡Estas que lo petas chaval! ¡Hay un 10% de descuento en el departamento de electrodomesticos!");
 				break;
 			case 2:
-				System.out.println("¡El dia de hoy contamos con 20% de descuento en el departamento de electrodomesticos!");
+				System.out.println("¡Estas que lo petas chaval! ¡Hay un 20% de descuento en el departamento de electrodomesticos!");
 				break;
 			case 3:
-				System.out.println("¡El dia de hoy contamos con 30% de descuento en el departamento de electrodomesticos!");
+				System.out.println("¡Estas que lo petas chaval! ¡Hay un 30% de descuento en el departamento de electrodomesticos!");
 				break;
 		}
 	}
@@ -222,13 +222,13 @@ public class Espania implements ModoIdioma{
 		boolean cuentaExitosa=false; 
 		int contador =0;
 			System.out.println("");
-			System.out.println("---------- C O M P R A    S E G U R A ----------- ");
+			System.out.println("---------- A D Q U I S I O N    S E G U R A ----------- ");
 			System.out.println("");
-			System.out.println("Su lista de compras se muestra a continuacion: ");
+			System.out.println("Su lista de productos deseados se despliega en este momento: ");
 			System.out.println("");
 			tienda.listaCompras();
 			do{
-			System.out.print("\n"+"Ingrese su numero de cuenta para completar la transaccion: ");
+			System.out.print("\n"+"Introduzca su numero de cuenta para finalizar la compra: ");
 			String cuentaUsuario = sc.nextLine();
 				try{
 					contador++;
@@ -236,22 +236,22 @@ public class Espania implements ModoIdioma{
 					cuentaExitosa=true;
 					continuar=false;
 				}catch(IllegalArgumentException e){
-					System.out.println("\n	El numero de cuenta ingresado es incorrecto o.O");
+					System.out.println("\n	El numero de cuenta ingresado no es correcto.");
 					if(contador>2){
-						System.out.println("\n		¡Ha excedido el número de intentos!");
-						System.out.println("	Por seguridad, tendremos que cerrar su sesión");
+						System.out.println("\n		¡Me cago en la leche! Parece que ha excedido el numero de intentos");
+						System.out.println("	Se cerrara la sesion para evitar problemas. Enviaremos a la interpol por usted");
 						continuar=false;
 					}
 				}catch(SaldoInsuficienteException ex){
-					System.out.println("\n		Su saldo es insuficiente");
-					System.out.println("	Tendremos que cancelar su compra :(");
+					System.out.println("\n		Esta sin blanca, tio. Tu saldo no es suficiente");
+					System.out.println("	Se ha pasado tres pueblos sin duda. Se cancelara su compra");
 					continuar=false;
 				}
 			}while(continuar);
 			
 			if(cuentaExitosa){
-				System.out.println("		¡Su compra se ha realizado con éxito!");
-				System.out.println("Sus productos se entregarán en " + tienda.lugarDeEntrega()+ " dentro de 5 días hábiles");
+				System.out.println("		¡La compra se ha completado de manera satisfactoria!");
+				System.out.println("Los articulos seran enviados a su domicilio en " + tienda.lugarDeEntrega()+ " dentro de 7 días hábiles");
 			}
 		}
 		tienda.generarTicket(false);
