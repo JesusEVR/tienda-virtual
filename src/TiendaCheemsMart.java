@@ -74,6 +74,7 @@ public class TiendaCheemsMart{
 								System.out.println("		Por seguridad, sera redirigido a la pantalla principal");
 								System.out.println("");
 								seguir=true;
+								contador= 0;
 								break;
 							}
 						}
