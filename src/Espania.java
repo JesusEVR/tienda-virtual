@@ -136,7 +136,7 @@ public class Espania implements ModoIdioma{
 					seguir = false;
 					break;
 				case 1:
-					System.out.print("\n"+"Introduce el codigo de barras del articulo que deseas adquirir, chavalete: ");
+					System.out.print("\n"+"Introduzca el codigo de barras del articulo que desea adquirir, chavalete: ");
 					
 						codigoBarras = sc.nextLine();
 					
