@@ -35,22 +35,22 @@ public class TiendaCheemsMart{
 		
 		do{
 		System.out.println("");
-		System.out.println("-*-*-*-*-*-* T I E N D A  C H E E M S M A R T -*-*-*-*-*-* ");
+		System.out.println("-*-*-*-*-*-*   T I E N D A  C H E E M S M A R T   -*-*-*-*-*-* ");
 		System.out.println("");
-		System.out.println("		1. Iniciar Sesion");
+		System.out.println("		1. Iniciar sesion");
 		System.out.println("		0. Salir de la tienda");
 		System.out.println("");
-		System.out.print("Seleccione la opción que desee ejecutar: ");
+		System.out.print("Seleccione la opcion que desee ejecutar: ");
 			while(true){
 				try {
 					String opcionUsuario = sc.nextLine();
 					opcion =  Integer.parseInt(opcionUsuario);
 					if(opcion >-1 && opcion < 2){ 
 						break;
-					}else{ System.out.print("		Por favor, elige una opción válida: ");
+					}else{ System.out.print("		Por favor, elige una opción valida: ");
 					}
 				}catch (NumberFormatException ex){
-					System.out.print("		Por favor, elige una opción válida: ");
+					System.out.print("		Por favor, elige una opción valida: ");
 				}
 			}
 				switch(opcion){
@@ -62,16 +62,16 @@ public class TiendaCheemsMart{
 								try{
 								tienda.iniciarSesion();
 								}catch(UnsupportedOperationException ex){
-									System.out.println("	¡Aún no hay usuarios registrados en el sistema!");
+									System.out.println("	¡Aun no hay usuarios registrados en el sistema!");
 									seguir=true;
 									break;
 								}
 							contador++;
 							if(contador>3){
 								System.out.println("");
-								System.out.println("¡Se ha activado el sistema de inicio de sesión seguro!");
-								System.out.println("	Excedió la cantidad de intentos permitidos para iniciar sesión");
-								System.out.println("		Por seguridad, será redirigido a la pantalla principal");
+								System.out.println("¡Se ha activado el sistema de inicio de sesion seguro!");
+								System.out.println("	Excedio la cantidad de intentos permitidos para iniciar sesion");
+								System.out.println("		Por seguridad, sera redirigido a la pantalla principal");
 								System.out.println("");
 								seguir=true;
 								break;
