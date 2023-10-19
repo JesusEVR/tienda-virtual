@@ -28,7 +28,7 @@ public class Television implements Articulo{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Código: " +codigoBarras()+ " - Artículo: Television de 55 pulgadas"+"\n"+ "   Precio: $" +precio() +" MXN";
+		return "Código: " +codigoBarras()+ " - Artículo: Television de 55 pulgadas"+"\n"+ "        Precio: $" +precio() +" MXN";
 	}
 
 	/**
