@@ -28,7 +28,7 @@ public class Consola implements Articulo{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Código: " +codigoBarras()+ " - Artículo: PlayStiercol 6"+"\n"+ "   Precio: $" +precio() +" MXN";
+		return "Código: " +codigoBarras()+ " - Artículo: PlayStiercol 6"+"\n"+ "        Precio: $" +precio() +" MXN";
 	}
 
 	/**
