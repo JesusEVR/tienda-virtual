@@ -141,15 +141,15 @@ public class Mexico implements ModoIdioma{
 						if(codigoBarras.length()==5){ 
 							if(codigoBarras.toUpperCase().contains("AL")){ 
 								articulo = tienda.buscarAlimento(codigoBarras.toUpperCase());
-								if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								if(articulo == null) System.out.println("\n		Codigo de barras invalido \n");
 								this.alimentoConDescuento(articulo);
 							}else if(codigoBarras.toUpperCase().contains("ET")){ 
 								articulo = tienda.buscarElectronico(codigoBarras.toUpperCase());
-								if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								if(articulo == null) System.out.println("\n		Codigo de barras invalido \n");
 								tienda.agregarAlCarrito(articulo);
 							}else if(codigoBarras.toUpperCase().contains("ED")){ 
 								articulo = tienda.buscarElectrodomestico(codigoBarras.toUpperCase());
-								if(articulo == null) System.out.println("\n		Codigo de barras inválido \n");
+								if(articulo == null) System.out.println("\n		Codigo de barras invalido \n");
 								tienda.agregarAlCarrito(articulo);
 							}else{ System.out.println("\n		Codigo de barras invalido \n");}
 							
@@ -220,12 +220,12 @@ public class Mexico implements ModoIdioma{
 			System.out.println("");
 			System.out.println("---------- C O M P R A    S E G U R A ----------- ");
 			System.out.println("");
-			System.out.println("Su lista de compras se muestra a continuacion: ");
+			System.out.println("Tu lista de compras se muestra a continuacion: ");
 			System.out.println("");
 			tienda.listaCompras();
 			
 			do{
-			System.out.print("\n"+"Ingrese su numero de cuenta para completar la transaccion: ");
+			System.out.print("\n"+"Ingresa tu numero de cuenta para completar la transaccion: ");
 			String cuentaUsuario = sc.nextLine();
 				try{
 					contador++;
@@ -235,21 +235,21 @@ public class Mexico implements ModoIdioma{
 				}catch(IllegalArgumentException e){
 					System.out.println("\n	El numero de cuenta ingresado es incorrecto o.O");
 					if(contador>2){
-						System.out.println("\n		¡Ha excedido el número de intentos!");
-						System.out.println("	Por seguridad, tendremos que cerrar su sesión");
+						System.out.println("\n		¡Has excedido el numero de intentos!");
+						System.out.println("	Por seguridad, tendremos que cerrar tu sesion y enviar tu direccion IP a las autoridades correspondientes.");
 						continuar=false;
 					}
 				}catch(SaldoInsuficienteException ex){
-					System.out.println("\n		Su saldo es insuficiente");
-					System.out.println("	Tendremos que cancelar su compra :(");
+					System.out.println("\n		Tu saldo es insuficiente");
+					System.out.println("	Tendremos que cancelar tu compra :(");
 					continuar=false;
 				}
 			}while(continuar);
 			
 			
 			if(cuentaExitosa){
-				System.out.println("\n		¡Su compra se ha realizado con éxito!");
-				System.out.println("Sus productos se entregarán en " + tienda.lugarDeEntrega()+ " dentro de 5 días hábiles");
+				System.out.println("\n		¡Tu compra se ha realizado con exito!");
+				System.out.println("Tus productos se entregaran en " + tienda.lugarDeEntrega()+ " dentro de 5 dias habiles");
 			}
 			
 		}
