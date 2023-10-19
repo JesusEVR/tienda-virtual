@@ -28,7 +28,7 @@ public class Aspiradora implements Articulo{
 	 * Devuelve una cadena con la información del artículo
 	 */
 	public String informacion(){
-		return "Código: " +codigoBarras()+ " Artículo: Aspiradora silenciosa de gran potencia"+"\n"+ "	Precio: $" +precio() +" MXN";
+		return "Código: " +codigoBarras()+ " - Artículo: Aspiradora silenciosa de gran potencia"+"\n"+ "	Precio: $" +precio() +" MXN";
 	}
 
 	/**
