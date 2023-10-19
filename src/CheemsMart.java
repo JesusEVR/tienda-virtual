@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
- * Clase que define las carateristicas de un CheemsMart.
+ * Clase que 'simplifica' el proceso de la tienda virtual CheemsMart.
  *
  * @author paolasanv
  * @author Supr-Lilito
