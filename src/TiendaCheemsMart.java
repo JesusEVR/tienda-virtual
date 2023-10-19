@@ -47,10 +47,10 @@ public class TiendaCheemsMart{
 					opcion =  Integer.parseInt(opcionUsuario);
 					if(opcion >-1 && opcion < 2){ 
 						break;
-					}else{ System.out.print("		Por favor, elige una opción valida: ");
+					}else{ System.out.print("		Por favor, elige una opcion valida: ");
 					}
 				}catch (NumberFormatException ex){
-					System.out.print("		Por favor, elige una opción valida: ");
+					System.out.print("		Por favor, elige una opcion valida: ");
 				}
 			}
 				switch(opcion){
